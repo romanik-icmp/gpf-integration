@@ -1,0 +1,64 @@
+\section{\label{sec:init-gpf} Grand partition function in the representation of collective variables}
+The grand partition function (GPF) of a simple many-particle interacting system is represented as
+\begin{equation}
+	\label{Xi_as_prod}
+	\Xi = \Xi_0\Xi_G\Xi_L.
+\end{equation}
+Here $\Xi_0$ is the GPF of a reference system, which is assumed to be known. $\Xi_G$ is a short-wave contribution to the GPF with wave-vectors $\abs{\vb{k}}>B$, with $B$ being the cut-off parameter.
+$\Xi_L$ denotes long-wave contributions to the GPF and is the object of our investigation in this paper. The expression for $\Xi_L$, obtained in~\cite{Roma2023Preprint} is following:
+\begin{equation}
+	\label{Xi_L}
+	\Xi_L = jQ(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)^{N_B} \exp(\tilde{\mathfrak{M}}_0). \Xi_L^{(1)}
+\end{equation} 
+Explicit expressions for $Q(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)$ and $\tilde{\mathfrak{M}_0}$ are given in Appendix~A, $\Xi_L^{(1)}$ is defined as
+\begin{eqnarray}
+	\label{Xi_L_1}
+	\Xi_L^{(1)} &=& 
+	\int \exp\left(
+	\mu^* \rho_0 - \frac{1}{2} \sum_{\substack{\vb k \\ k \leq B}} d(k) \rho_{\vb k} \rho_{-\vb k} 
+	\right.\\
+	&& -\left. \frac{a_4}{4! N_B} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4} \right) ({\rm d} \rho)^{N_B}
+	\nonumber.
+\end{eqnarray}
+Here $d(k) = a_2 + \frac{\beta\hat{\Phi}_{\vb k}}{V}$, with $\beta$ being the inverse temperature, $V$ the volume, $\hat{\Phi}_{\vb k}$ the Fourier component of the long-range part of the interaction potential.
+Quantities $\mu^*$, $a_2$ and $a_4$ are functions of the reference-system packing fraction $\eta$, temperature $T$, and microscopic parameters of interaction potential. They are explicitly presented in Appendix~A. The quantity $\mu^*$ also linearly depends on the chemical potential $\mu$.
+
+The wave vector $\vb k$ takes on $N_B$ values in a sphere of radius $B$, so that
+\begin{equation}
+	\label{NB}
+	N_B = \frac{B^3}{6\pi^2}V.
+\end{equation}
+Thus the number of variables to be integrated over is equal to $N_B$
+\begin{equation*}
+	(d\rho)^{N_B} = {\rm d}\rho_0 \prod_{\vb k\atop k\le B} {\rm d}\rho_{\vb k}^c {\rm d}\omega_{\vb k}^s
+\end{equation*}
+where $\rho_{\vb k}^c$ and $\rho_{\vb k}^s$ are the real and imaginary parts of the collective variable $\rho_{\vb k} = \rho_{\vb k}^c - {\rm i} \rho_{\vb k}^s$ respectively. The 'prime' sign over the product means that the wave-vector takes on values only form the upper semi-sphere, i.e. $k_z > 0$ and $\vb k \neq 0$.
+
+The following simplification is used for the Kronecker symbol in~\eqref{Xi_L_1}
+\begin{equation*}
+	\delta_{\vb k} = \frac{1}{V} \int (\rm{d} \vb r) \rm{e}^{-{\rm i} \vb k \vb r} = \frac{1}{N_B}\sum_{\vb l} {\rm e}^{-{\rm i} \vb k \vb l}.
+\end{equation*}
+The summation over $\vb l$ implies that $\vb l$ takes on $N_B$ values in real space corresponding to the $N_B$ values of wave vector $\vb k$ in the sphere of radius $B$ in the reciprocal space. This is called a spherical approximation for the first Brillouin zone. It is assumed that a proper correspondance can be established between a spherical Brillouin zone and a structure in real space by analogy to how simple cubic lattice corresponds to its Brillouin zone in the Ising-model problem [REFERENCE NEEDED]. 
+
+In what follows we also will understand that $\vb l \in \Lambda_0$ corresponds to vectors $\vb k$ such that $k \leq B$, $\vb l \in \Lambda_1$ to $k \leq B_1$, and in general $\vb l \in \Lambda_n$ to $k \leq B_n$. Here $B_n = B/s^n$ and $s$ is the renormalization parameter to be introduced later.
+
+The expression~\eqref{Xi_L_1} formally coincides with the expression for the partition function functional of the 3-dimentional Ising-like model in an external field [REFERENCE NEEDED]. 
+
+A necessary condition for this functional to give a critical-point solution is $\mu^* = 0$, which leads to a line of critical temperature dependence on the chemical potential $\mu$ (at some value of the reference system packing fraction $\eta_c$).
+
+We are going to integrate~\eqref{Xi_L_1} following the method developed for calculation of the partition function of the 3-dimentional Ising-like models [Kozlovakii, CMP, 2005; Yukhnovskii, Nuovo, 1989]. The main idea is to divide the interval $[0, B]$ into sub-intervals $(B_1, B]$, $(B_2, B_1]$, $(B_3, B_2]$ and so on, where $B_1 = B/s$, $B_2 = B_1/s = B_2/s^2$, or in general $B_n = B/s^n$, $s$ being the renormalization group parameter, $s > 1.$ Variables $\rho_{\vb k}$ with $B_1 < k \leq B$ are said to belong to the first layer, $\rho_{\vb k}$ with $B_2 < k \leq B_1$ to the second one, and continuing in the same manner, $\rho_{\vb k}$ with $B_n < k \leq B_{n-1}$ to the $n-$th layer.
+The integration is performed iteratively, starting with integration over the collective variables of the first layer, then over the second one and so on.
+The number of variables to be left after the integration over the first layer is $N_1 = N_B / s^3 = (B^3 V)/(2\pi^2 s^3)$. Thus the number of variables integrated out in the first iteration is $N_B - N_1 = N_B(1-s^{-3})$.
+
+To factorize the integrals the Fourier transform $\hat{\Phi}_{\vb k}$ of the long-range part of interaction potential is replaced with its average value over each interval:
+\begin{eqnarray*}
+	\hat{\Phi}_{\vb k} & \rightarrow & \hat{\Phi}_{B_1, B}, \quad B_1 < k \leq B;
+	\\
+	& & \hat{\Phi}_{B_2, B_1}, \quad B_2 < k \leq B_1;
+	\\
+	& & ...
+	\\
+	& & \hat{\Phi}_{B_n, B_{n-1}}, \quad B_n < k \leq B_{n-1}.
+\end{eqnarray*}
+The particulars of this averaging are not so important to outline the method of layer-by-layer integration. Thus we will return to them later when we present some numerical and graphical results.
+Now let us explicitly integrate over the variables of the first layer.

@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+
+\usepackage{orcidlink}
+\usepackage{amssymb}
+\usepackage{physics}
+%\usepackage{cite}
+\usepackage{hyperref} % for hyperlinks in references
+\usepackage[nameinlink]{cleveref}
+
+\textwidth 150mm
+\textheight 240mm
+\voffset = -20mm
+
+%Title of paper
+\title{Integration of the Grand Partition Function Functional}
+
+\author{I.R.~Yukhnovskii~\orcidlink{0000-0002-4834-3948},
+	R.V.~Romanik 
+	\\ \small Institute for Condensed Matter Physics, NAS of Ukraine 
+	\\ \small 1~Svientsitskii Street, 79011, Lviv, Ukraine 
+	\\ \small romanik@icmp.lviv.ua}
+%\author{R.V.~Romanik \\ Institute for Condensed Matter Physics, NAS of Ukraine}
+
+\begin{document}
+	
+\maketitle
+	
+	%\begin{multicols}{2}
+	
+\abstract{In this paper, we integrate the grand partition function functional obtained in our previous work [JPS, 2024], applying the method of leyer-by-leyer integration over collective variables.
+	\\
+		
+\textbf{Keywords: } Simple fluids, Collective variables, Grand Canonical Ensemble.
+}
+	
+\section{Introduction}
+
+\input{./grand_partition_function}
+
+%\input{./problem_statement}
+	
+\section{Conclusion}
+	
+\appendix
+	
+\renewcommand{\theequation}{A.\arabic{equation}}
+\setcounter{equation}{0}
+	
+%\input{./total_correlation_functions}
+	
+%\bibliographystyle{plain}
+%\bibliographystyle{longbibliography}
+\bibliographystyle{nature}
+\bibliography{fluids_cv}
+	
+\end{document}
