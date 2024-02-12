@@ -5,10 +5,10 @@ The grand partition function (GPF) of a simple many-particle interacting system 
 	\Xi = \Xi_0\Xi_G\Xi_L.
 \end{equation}
 Here $\Xi_0$ is the GPF of a reference system, which is assumed to be known. $\Xi_G$ is a short-wave contribution to the GPF with wave-vectors $\abs{\vb{k}}>B$, with $B$ being the cut-off parameter.
-$\Xi_L$ denotes long-wave contributions to the GPF and is the object of our investigation in this paper. The expression for $\Xi_L$, obtained in~\cite{Roma2023Preprint} is following:
+$\Xi_L$ denotes long-wave contributions to the GPF and is the object of our investigation in this paper. The expression for $\Xi_L$, obtained in~\cite{RomaJPS2024} (see also~\cite{Roma2023Preprint} for more details) is following:
 \begin{equation}
 	\label{Xi_L}
-	\Xi_L = jQ(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)^{N_B} \exp(\tilde{\mathfrak{M}}_0). \Xi_L^{(1)}
+	\Xi_L = jQ(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)^{N_B} \exp(\tilde{\mathfrak{M}}_0) \Xi_L^{(1)}
 \end{equation} 
 Explicit expressions for $Q(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)$ and $\tilde{\mathfrak{M}_0}$ are given in Appendix~A, $\Xi_L^{(1)}$ is defined as
 \begin{eqnarray}
@@ -46,7 +46,7 @@ The expression~\eqref{Xi_L_1} formally coincides with the expression for the par
 
 A necessary condition for this functional to give a critical-point solution is $\mu^* = 0$, which leads to a line of critical temperature dependence on the chemical potential $\mu$ (at some value of the reference system packing fraction $\eta_c$).
 
-We are going to integrate~\eqref{Xi_L_1} following the method developed for calculation of the partition function of the 3-dimentional Ising-like models [Kozlovakii, CMP, 2005; Yukhnovskii, Nuovo, 1989]. The main idea is to divide the interval $[0, B]$ into sub-intervals $(B_1, B]$, $(B_2, B_1]$, $(B_3, B_2]$ and so on, where $B_1 = B/s$, $B_2 = B_1/s = B_2/s^2$, or in general $B_n = B/s^n$, $s$ being the renormalization group parameter, $s > 1.$ Variables $\rho_{\vb k}$ with $B_1 < k \leq B$ are said to belong to the first layer, $\rho_{\vb k}$ with $B_2 < k \leq B_1$ to the second one, and continuing in the same manner, $\rho_{\vb k}$ with $B_n < k \leq B_{n-1}$ to the $n-$th layer.
+We are going to integrate~\eqref{Xi_L_1} following the method developed for calculation of the partition function of the 3-dimentional Ising-like models \cite{MpkCMP2005,Yukh1989riv}. The main idea is to divide the interval $[0, B]$ into sub-intervals $(B_1, B]$, $(B_2, B_1]$, $(B_3, B_2]$ and so on, where $B_1 = B/s$, $B_2 = B_1/s = B_2/s^2$, or in general $B_n = B/s^n$, $s$ being the renormalization group parameter, $s > 1.$ Variables $\rho_{\vb k}$ with $B_1 < k \leq B$ are said to belong to the first layer, $\rho_{\vb k}$ with $B_2 < k \leq B_1$ to the second one, and continuing in the same manner, $\rho_{\vb k}$ with $B_n < k \leq B_{n-1}$ to the $n-$th layer.
 The integration is performed iteratively, starting with integration over the collective variables of the first layer, then over the second one and so on.
 The number of variables to be left after the integration over the first layer is $N_1 = N_B / s^3 = (B^3 V)/(2\pi^2 s^3)$. Thus the number of variables integrated out in the first iteration is $N_B - N_1 = N_B(1-s^{-3})$.
 
@@ -62,3 +62,191 @@ To factorize the integrals the Fourier transform $\hat{\Phi}_{\vb k}$ of the lon
 \end{eqnarray*}
 The particulars of this averaging are not so important to outline the method of layer-by-layer integration. Thus we will return to them later when we present some numerical and graphical results.
 Now let us explicitly integrate over the variables of the first layer.
+
+The second term in the exponent of~\eqref{Xi_L_1} is rewritten as
+\begin{equation*}
+	\sum_{\substack{\vb k, k \leq B}} d(k) \rho_{\vb k} \rho_{-\vb k} 
+	= 
+	\sum_{\substack{\vb k, k \leq B_1}} d(k) \rho_{\vb k} \rho_{-\vb k}
+	+
+	\sum_{\substack{\vb k, B_1 < k \leq B}} d(B_1, B) \rho_{\vb k} \rho_{-\vb k}
+\end{equation*}
+where $d(B_1, B) = a_2 + \beta\hat{\Phi}_{B_1, B}/V$.
+The expression for $\Xi_L^{(1)}$ is now recast
+\begin{eqnarray*}
+	\Xi_L^{(1)} &=& 
+	\int \exp\left(
+	\mu^* \rho_0 - \frac{1}{2} \sum_{\substack{\vb k \\ k \leq B_1}} d(k) \rho_{\vb k} \rho_{-\vb k}
+	- \frac{d(B_1, B)}{2} \sum_{\substack{\vb k \\ B_1 < k \leq B}} \rho_{\vb k} \rho_{-\vb k}  
+	\right.
+	\\
+	&& -\left. \frac{a_4}{4! N_B} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4} \right) 
+	({\rm d} \rho)^{N_1} ({\rm d} \rho)^{N_B - N_1}
+	\nonumber.
+\end{eqnarray*}
+To distinguish the variables to be integrated over in the first iteration, let us denote them by $\eta_{\vb k}$, i.e. $\rho_{\vb k} \rightarrow \eta_{\vb k}$ for $B_1 < k \leq B$. Let us also extend the number of variables $\eta_{\vb k}$ with the help of $\delta-$functions:
+\begin{equation*}
+	\prod_{\vb{k}, 0\leq k \leq B_1}\delta(\eta_{\vb k}-\rho_{\vb k})
+	= \int ({\rm d}\nu)^{N_1}\exp \left(2\pi{\rm i}\sum_{k\leq B_1}\nu_{\vb k}(\eta_{\vb k}-\rho_{\vb k})\right)
+\end{equation*}
+so that $\Xi_L^{(1)}$ is rewritten as 
+\begin{eqnarray*}
+	\Xi_L^{(1)} &=& 
+	\int (\rm{d} \rho)^{N_1} \exp 
+	\left(
+		\mu^* \rho_0 - \frac{1}{2} \sum_{\substack{\vb k \\ k \leq B_1}} (d(k) - d(B_1, B) ) \rho_{\vb k} \rho_{-\vb k}
+	\right)
+	\\
+	&&  \int ({\rm d}\nu)^{N_1} \exp \left(-2\pi{\rm i}\sum_{\vb k, k \leq B_1} \nu_{\vb k}\rho_{\vb k}\right)
+	I(\nu_{\vb k}).
+\end{eqnarray*}
+Here the notation $I(\nu_{\vb k})$ stands for the integral over $\eta_{\vb k}$
+\begin{eqnarray*}
+	I(\nu_{\vb k}) & = & \int ({\rm d} \eta)^{N_B} \exp
+	\left( 2\pi{\rm i} \sum_{\vb k, k \leq B} \bar{\nu}_{\vb k} \eta_{\vb k} - \frac{d(B_1, B)}{2} \sum_{\vb k, k \leq B} \eta_{\vb k} \eta_{-\vb k}
+	\right.
+	\\
+	&& - \left. \frac{a_4}{4! N_B} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B}} \eta_{\vb k_1} \dotsc \eta_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4} \right)
+\end{eqnarray*}
+where the quantity $\bar{\nu}_{\vb k}$ is introduced as
+\begin{equation*}
+	\bar{\nu}_{\vb k} = \left\{
+	\begin{array}{ll}
+		\nu_{\vb k}, \quad k \leq B, \\
+		0, \quad B_1 < k \leq B
+	\end{array}
+	\right.
+\end{equation*}
+by analogy with the method described in~\cite{MpkCMP2005}.
+
+Now this integral can be factorized in the so-called site variables
+\begin{equation*}
+	\tilde{\eta}_{\vb l} = \frac{1}{\sqrt{N_B}}\sum_{\vb k, k \leq B}\eta_{\vb k}{\rm e}^{{\rm i}{\vb k}{\vb l}}, \qquad \tilde{\bar{\nu}}_{\vb l}=\frac{1}{\sqrt{N_B}}\sum_{\vb k, k \leq B}\bar{\nu}_{\vb k}{\rm e}^{-{\rm i}{\vb k}{\vb l}}.
+\end{equation*}
+For some useful relations for site variables, see Appendix~B.
+Now the integral takes on the form
+\begin{eqnarray*}
+	I(\nu_{\vb k}) & = & j^{-1} \prod_{\vb l \in \Lambda} \int_{-\infty}^{\infty} {\rm d} \tilde{\eta_{\vb l}}
+	\exp(2\pi{\rm i} \tilde{\bar{\nu}}_{\vb l} \tilde{\eta_{\vb l}} -\frac{d(B_1, B)}{2} \tilde{\eta_{\vb l}}^2 - \frac{a_4}{4!}\tilde{\eta_{\vb l}}^4 )
+	\\
+	& = & j^{-1} [Q(d)]^{N_B} \prod_{\vb l \in \Lambda} \exp(-\sum_{n \geq 1} \frac{S_{2n}}{(2n)!} \tilde{\bar{\nu}}_{\vb l}^{2n}).
+\end{eqnarray*}
+Restricting the resulting exponent to the $4-$th power in $\tilde{\bar{\nu}}_{\vb l}$ one gets
+\begin{eqnarray*}
+	I(\nu_{\vb k}) & = & j^{-1} [Q(d)]^{N_B} \prod_{\vb l \in \Lambda}
+	\exp(-\frac{S_2}{2!}\tilde{\bar{\nu}}_{\vb l}^2 - \frac{S_4}{4!}\tilde{\bar{\nu}}_{\vb l}^4 )
+	\\
+	& = & j^{-1} [Q(d)]^{N_B} \prod_{\vb l \in \Lambda_1}
+	\exp(-\frac{S_2}{2!}\tilde{\nu}_{\vb l}^2 - \frac{S_4}{4!}\tilde{\nu}_{\vb l}^4 ).
+\end{eqnarray*}
+The same result is expressed in terms of $\nu_{\vb k}$ as
+\begin{eqnarray*}
+	I(\nu_{\vb k}) & = & j^{-1} [Q(d)]^{N_B} 
+	\exp \left(- \frac{S_2}{2!} \sum_{\vb k, k \leq B_1} \nu_{\vb k} \nu_{-\vb k}
+	\right.
+	\\
+	& & \left.
+	 - \frac{S_4}{4! N_B} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}} \nu_{\vb k_1} \dotsc \nu_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
+	 \right)
+	 .
+\end{eqnarray*}
+In the above formulae, the following quantities were introduced:
+\begin{equation*}
+	Q(d) = \sqrt{2\pi}\left(\frac{3}{a_4}\right)^{1/4} {\rm e}^{x^2/4} U(0,x);
+\end{equation*}
+\begin{equation*}
+	S_2 = (2\pi)^2 \left(\frac{3}{a_4}\right)^{1/2} U(x); \quad S_4 = (2\pi)^4 \frac{3}{a_4}\varphi(x);
+\end{equation*}
+\begin{equation*}
+	x = d(B_1, B) \left(\frac{3}{a_4}\right)^{1/2}.
+\end{equation*}
+
+The next step is to integrate over $\nu_{\vb k}$ the following integral
+\begin{eqnarray*}
+	I_2(\rho_{\vb k}) & = & \int ({\rm d} \nu)^{N_1} 
+	\exp 
+	\left(-2\pi{\rm i} \sum_{\vb k, k \leq B_1} \nu_{\vb k}\rho_{\vb k} 
+		-\frac{S_2}{2!} \sum_{\vb k, k \leq B_1} \nu_{\vb k}\nu_{-\vb k}
+	\right.
+	\\
+	& &
+	\left. 
+		- \frac{S_4 s^{-3}}{4! N_1} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}} \nu_{\vb k_1} \dotsc \nu_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
+	\right)
+	\\
+	& = &
+	j_1 \prod_{\vb l \in \Lambda_1} \int {\rm d} \tilde{\nu}_{\vb l} 
+	\exp(-2\pi {\rm i} \tilde{\nu}_{\vb l} \tilde{\rho}_{\vb l} - \frac{S_2}{2!}\tilde{\nu}_{\vb l}^2
+	- \frac{S_4}{4! s^3} \tilde{\nu}_{\vb l}^4  )
+\end{eqnarray*}
+where $j_1 = \sqrt{2}^{N_1 - 1}$, and this time
+\begin{equation*}
+	\tilde{\rho}_{\vb l} = \frac{1}{\sqrt{N_1}}\sum_{\vb k, k \leq B_1}\eta_{\vb k}{\rm e}^{{\rm i}{\vb k}{\vb l}}, \qquad \tilde{\nu}_{\vb l}=\frac{1}{\sqrt{N_1}}\sum_{\vb k, k \leq B_1}\bar{\nu}_{\vb k}{\rm e}^{-{\rm i}{\vb k}{\vb l}}.
+\end{equation*}
+The result of integration is
+\begin{equation*}
+	I_2(\rho_{\vb k}) = j_1 [Q(P)]^{N_1} \prod_{\vb l \in \Lambda_1} 
+	\exp(- \sum_{n \geq 1} \frac{R_{2n}}{(2n)!} \tilde{\rho}_{\vb l}^{2n} ).
+\end{equation*}
+In the "$\rho^4$" approximation this takes the form
+\begin{eqnarray*}
+	I_2(\rho_{\vb k}) & = & j_1 [Q(P)]^{N_1} \prod_{\vb l \in \Lambda_1}
+	\exp( - \frac{R_2}{2!} \tilde{\rho}_{\vb l}^2 - \frac{R_4}{4!} \tilde{\rho}_{\vb l}^4)
+	\\
+	& = & j_1 [Q(P)]^{N_1} 
+	\exp( -\frac{R_2}{2!} \sum_{\vb k, k \leq B_1} \rho_{\vb k} \rho_{-\vb k} - \frac{R_4}{4!N_1} 
+	\sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}).
+\end{eqnarray*}
+Here
+\begin{equation*}
+	Q(P) = (2\pi)^{-1/2} s^{3/4} \left(\frac{a_4}{\varphi(x)}\right)^{1/4} {\rm e}^{y^2/4} U(0,y);
+\end{equation*}
+\begin{equation*}
+	R_2 = s^{3/2} \left(\frac{a_4}{\varphi(x)}\right)^{1/2} U(y); \quad R_4 = s^3 a_4 \frac{\varphi(y)}{\varphi(x)};
+\end{equation*}
+\begin{equation*}
+	y = s^{3/2} U(x) \sqrt{\frac{3}{\varphi(x)}}.
+\end{equation*}
+This time the approximation for the Kronecker symbol is 
+$$
+	\delta_{\vb k} \approx \frac{1}{N_1} \sum_{\vb l \in \Lambda_1} \exp(-{\rm i} \vb{k} \vb{l}).
+$$
+
+Finally, as a result of integration over the first layer, we get for $\Xi_L^{(1)}$
+\begin{eqnarray}
+	\Xi_L^{(1)} & = & j^{-1}j_1 [Q(d)]^{N_B} [Q(P)]^{N_1} 
+	\\
+	&& \times 
+	\int ({\rm d} \rho)^{N_1} \exp
+	\left(
+		\mu^*\rho_0 - \frac{1}{2} \sum_{\vb k, k \leq B_1} d_1(k) \rho_{\vb k} \rho_{-\vb k}
+	\right.
+	\nonumber \\
+	&& 
+	\left.
+		- \frac{a_4^{(1)}}{4!N_1} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}}
+		\rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
+	\right)
+	\nonumber
+\end{eqnarray}
+where
+\begin{equation*}
+	d_1(k) = a_2^{(1)} + \beta\hat{\Phi}_{\vb k} / V;
+\end{equation*}
+\begin{equation*}
+	a_2^{(1)} = R_2 - \frac{\beta\hat{\Phi}_{B_1, B}}{V} = s^{3/2} \left(\frac{a_4}{\varphi(x)}\right)^{1/2} U(y)
+	- \frac{\beta\hat{\Phi}_{B_1, B}}{V};
+\end{equation*}
+\begin{equation*}
+	a_4^{(1)} = R_4 = s^3 a_4 \frac{\varphi(y)}{\varphi(x)}.
+\end{equation*}
+These are recurrence relations between coefficients of an effective Hamiltonian before and after the integration over the first layer, establishing expressions for coefficients $a_2^{(1)}$ and $a_4^{(1)}$ via $a_2$ and $a_4$. An alternative, concise form is
+\begin{eqnarray}
+	a_2^{(1)} & = & d(B_1, B) N(x) - \frac{\beta\hat{\Phi}_{B_1, B}}{V};
+	\\
+	a_4^{(1)} & = & s^{-3} a_4 E(x).
+\end{eqnarray}
+Here the following quantities are introduced
+\begin{equation*}
+	N(x) = \frac{y U(y)}{x U(x)}; \quad E(x) = s^6 \frac{\varphi(y)}{\varphi(x)}.
+\end{equation*}
