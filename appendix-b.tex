@@ -1,1 +1,41 @@
 \section{Some relations for site variables}
+
+Here we present some relations between sets of collective variables $\{\rho_{\vb k}, \omega_{\vb k}\}$ and their counterparts -- site collective variables $\{\tilde{\rho}_{\vb l}, \tilde{\omega}_{\vb l}\}$. The presented expressions are meant to be generic, so that the meaning of summation over $\vb k$ and over $\vb l$ are not particularly specified, while $N$ being the number of different values that $\vb k$ or $\vb l$ takes on. They are usually specified more strictly in particular applications.
+
+By definition
+\begin{equation*}
+	\tilde{\omega}_{\vb l} = \frac{1}{\sqrt{N}} \sum_{\vb k} \omega_{\vb k} {\rm e}^{-{\rm i}{\vb k}{\vb l}},
+\end{equation*}
+\begin{equation*}
+	\tilde{\rho}_{\vb l} = \frac{1}{\sqrt{N}} \sum_{\vb k} \rho_{\vb k} {\rm e}^{{\rm i} {\vb k} {\vb l}}.
+\end{equation*}
+
+From this definition the following equalities follow.
+
+\begin{equation*}
+	\sum_{\vb k} \omega_{\vb k} \rho_{\vb k} = \sum_{\vb l} \tilde{\omega}_{\vb l} \tilde{\rho}_{\vb l}.
+\end{equation*}
+
+\begin{equation*}
+	\sum_{\vb l} \tilde{\omega}_{\vb l}^2 = \sum_{\vb k} \omega_{\vb k} \omega_{-\vb k}.
+\end{equation*}
+
+\begin{equation*}
+	N \sum_{\vb l} \tilde{\omega}_{\vb l}^4 = \sum_{\vb k_1, \dotsc, \vb k_4} \omega_{\vb k_1} \dotsc \omega_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}.
+\end{equation*}
+
+\begin{equation*}
+	N^{\frac{n}{2} - 1} \sum_{\vb l} \tilde{\omega}_{\vb l}^n = \sum_{\vb k_1, \dotsc, \vb k_n} \omega_{\vb k_1} \dotsc \omega_{\vb k_n} \delta_{\vb{k}_1 + \dotsc + \vb{k}_n}.
+\end{equation*}
+
+\begin{equation*}
+	\sum_{\vb l} \tilde{\rho}_{\vb l}^2 = \sum_{\vb k} \rho_{\vb k} \rho_{-\vb k}.
+\end{equation*}
+
+\begin{equation*}
+	N \sum_{\vb l} \tilde{\rho}_{\vb l}^4 = \sum_{\vb k_1, \dotsc, \vb k_4} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}.
+\end{equation*}
+
+\begin{equation*}
+	N^{\frac{n}{2} - 1} \sum_{\vb l} \tilde{\rho}_{\vb l}^n = \sum_{\vb k_1, \dotsc, \vb k_n} \rho_{\vb k_1} \dotsc \rho_{\vb k_n} \delta_{\vb{k}_1 + \dotsc + \vb{k}_n}.
+\end{equation*}
