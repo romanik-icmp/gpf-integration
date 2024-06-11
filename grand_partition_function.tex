@@ -73,7 +73,7 @@ The second term in the exponent of~\eqref{Xi_L_1} is rewritten as
 	+
 	\sum_{\substack{\vb k, B_1 < k \leq B_0}} d_2(B_1, B_0) \rho_{\vb k} \rho_{-\vb k}
 \end{equation*}
-where $d(B_1, B_0) = a_2 + \beta\hat{\Phi}_{B_1, B_0}/V$.
+where $d_2(B_1, B_0) = a_2 + \beta\hat{\Phi}_{B_1, B_0}/V$.
 The expression for $\Xi_L^{(1)}$ is now recast
 \begin{eqnarray*}
 	\Xi_L^{(1)} &=& 
@@ -316,3 +316,117 @@ The recurrence relations~\eqref{RR_2_1_d}~-~\eqref{RR_2_1_a4} link the coefficie
 	\\
 	a_4^{(2)} & = & s^{-3} a_4^{(1)} E(x_1).
 \end{eqnarray}
+
+\subsection{General result for the layer-by-layer integration}
+Having noticed the pattern while integration over the first two layers, we are now ready to generalize the result for an arbitrary number of layers.
+
+\begin{eqnarray}
+	\Xi_L^{(1)} & = & j_0^{-1}j_n Q_0 Q_1 \dotsc Q_{n-1} 
+	\\
+	&& \times 
+	\int ({\rm d} \rho)^{N_n} \exp
+	\left(
+	\mu^*\rho_0 - \frac{1}{2} \sum_{\vb k, k \leq B_n} d_2^{(n)}(k) \rho_{\vb k} \rho_{-\vb k}
+	\right.
+	\nonumber \\
+	&& 
+	\left.
+	- \frac{a_4^{(n)}}{4!N_n} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_n}}
+	\rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
+	\right)
+	\nonumber ,
+\end{eqnarray}
+where $j_n = \sqrt{2}^{N_n - 1},$ and
+\begin{equation}
+	\label{RR_n_d}
+	d_2^{(n)}(k) = a_2^{(n)} + \beta\hat{\Phi}_{\vb k} / V;
+\end{equation}
+\begin{equation}
+	\label{RR_n_a2}
+	a_2^{(n)} = R_2^{(n-1)} - \frac{\beta\hat{\Phi}_{B_n, B_{n-1}}}{V} = s^{3/2} \left(\frac{a_4^{(n-1)}}{\varphi(x_{n-1})}\right)^{1/2} U(y_{n-1})
+	- \frac{\beta\hat{\Phi}_{B_n, B_{n-1}}}{V};
+\end{equation}
+\begin{equation}
+	\label{RR_n_a4}
+	a_4^{(n)} = R_4^{(n-1)} = s^3 a_4^{(n-1)} \frac{\varphi(y_{n-1})}{\varphi(x_{n-1})}.
+\end{equation}
+The other quantities are
+\begin{equation*}
+	R_2^{(n)} = s^{3/2} \left(\frac{a_4^{(n)}}{\varphi(x_n)}\right)^{1/2} U(y_n);
+\end{equation*} 
+\begin{equation*}
+	R_4^{(n)} = s^3 a_4^{(n)} \frac{\varphi(y_n)}{\varphi(x_n)},
+\end{equation*}
+\begin{equation*}
+	y_n = s^{3/2} U(x_n) \left(\frac{3}{\varphi(x_n)}\right)^{1/2},
+\end{equation*}
+\begin{equation*}
+	x_n = d_2^{(n)}(B_{n+1}, B_n) \left(\frac{3}{a_4^{(n)}}\right)^{1/2},
+\end{equation*}
+
+\begin{equation*}
+	Q_{f_n} = \sqrt{2\pi}\left(\frac{3}{a_4^{(n)}}\right)^{1/4} {\rm e}^{x_n^2/4} U(0,x_n);
+\end{equation*}
+\begin{equation*}
+	Q_{\varphi_n} = (2\pi)^{-1/2} s^{3/4} \left(\frac{a_4^{(n)}}{\varphi(x_n)}\right)^{1/4} {\rm e}^{y_n^2/4} U(0,y_n).
+\end{equation*}
+The concise form of the recurrence relations is as follows:
+\begin{eqnarray}
+	a_2^{(n)} & = & d_2^{(n-1)}(B_n, B_{n-1}) N(x_{n-1}) - \frac{\beta\hat{\Phi}_{B_n, B_{n-1}}}{V};
+	\\
+	a_4^{(n)} & = & s^{-3} a_4^{(n-1)} E(x_{n-1}).
+\end{eqnarray}
+
+\subsection{Recurrence relations}
+The general recurrence relations between coefficients of effective block-structure Hamiltonians have the form
+\begin{eqnarray}
+	a_2^{(n+1)} & = & d_2^{(n)}(B_{n+1}, B_n) N(x_n) - \frac{\beta\hat{\Phi}_{B_{n+1}, B_n}}{V};
+	\\
+	a_4^{(n+1)} & = & s^{-3} a_4^{(n)} E(x_{n}).
+\end{eqnarray}
+With the help of the following change of variables
+\begin{eqnarray*}
+	r_n & = & d_2^{(n)}(0)s^{2n}
+	\nonumber \\
+	u_n & = & a_4^{(n)}s^{4n}
+	\nonumber
+\end{eqnarray*}
+The recurrence relations become
+\begin{eqnarray*}
+	\label{RR_final}
+	r_{n+1} & = & s^2(r_n + q) N(x_n) - s^2 q;
+	\nonumber\\
+	u_{n+1} & = & s u_n E(x_n)
+\end{eqnarray*}
+where
+\begin{equation*}
+	q = s^{2n} \frac{\beta \hat{\Phi}_0}{V} \left(\frac{\hat{\Phi}_{B_{n+1}, B_n}}{\hat{\Phi}_0} - 1\right)
+\end{equation*}
+The recurrence relations~\eqref{RR_final} possess a fixed point solution in the limit of $n \to \infty$. By definition, the fixed point solution means
+\begin{equation*}
+	r_{n+1} = r_n = r^*; \quad u_{n+1} = u_n = u^*
+\end{equation*}
+and hence
+\begin{eqnarray*}
+	r^* & = & s^2[-q + (r^* + q)N(x^*)],
+	\nonumber \\
+	u^* & = & s u^* E(x^*).
+\end{eqnarray*}
+From the last equality it follows
+\begin{equation}
+	sE(x^*) = 1.
+\end{equation}
+It is practical to chose $x^* = 0$, which is equivalent to $d_2^{(n)}(0) = 0$ at the fixed point, and gives $s = s^* = 3.5862$. We will use this value of $s$ to obtain particular numerical and graphical results. From the first recurrence relation it follows
+\begin{equation*}
+	r^* = -q\frac{N(x^*) - 1}{N(x^*) - s^{-2}}.
+\end{equation*}
+At $x^* = 0$, $r^* = q$ because $\lim_{x \to 0} (N(x) -1)/(N(x) - s^{-2}) = 1.$ 
+
+Finally, from 
+\begin{equation*}
+	x^* = \sqrt{3} \frac{r^* + q}{\sqrt{u^*}}
+\end{equation*}
+one finds the following expression for $u^*$
+\begin{equation*}
+	u^* = \frac{3 q^2}{(x^*)^2} \left[\frac{1 - s^{-2}}{N(x^*) - s^{-2}}\right]^2.
+\end{equation*}
