@@ -12,10 +12,11 @@
 \voffset = -20mm
 
 %Title of paper
-\title{Integration of the Grand Partition Function Functional}
+%\title{Integration of the Grand Partition Function Functional}
+\title{Critical temperature determination for fluids. An analytical approach based on collective variables method}
 
-\author{I.R.~Yukhnovskii~\orcidlink{0000-0002-4834-3948},
-	R.V.~Romanik 
+\author{R.V.~Romanik,
+	I.R.~Yukhnovskii~\orcidlink{0000-0002-4834-3948}
 	\\ \small Institute for Condensed Matter Physics, NAS of Ukraine 
 	\\ \small 1~Svientsitskii Street, 79011, Lviv, Ukraine 
 	\\ \small romanik@icmp.lviv.ua}
@@ -37,7 +38,10 @@
 
 \input{./grand_partition_function}
 
-%\input{./problem_statement}
+\input{./interaction_potential}
+
+\input{./results}
+
 	
 \section{Conclusion}
 	
@@ -49,6 +53,10 @@
 \input{./appendix-a}
 
 \input{./appendix-b}
+
+\input{./appendix-c}
+
+\input{./snippets}
 	
 %\input{./total_correlation_functions}
 	
@@ -56,6 +64,7 @@
 %\bibliographystyle{longbibliography}
 % \bibliographystyle{nature}
 \bibliographystyle{cmpj}
-\bibliography{fluids_cv,icmp}
+%\bibliography{fluids_cv,icmp}
+\bibliography{fluids_cv,fluids_general,icmp}
 	
 \end{document}

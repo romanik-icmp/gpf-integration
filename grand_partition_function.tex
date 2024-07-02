@@ -392,16 +392,20 @@ With the help of the following change of variables
 	\nonumber
 \end{eqnarray*}
 The recurrence relations become
-\begin{eqnarray*}
+\begin{eqnarray}
 	\label{RR_final}
 	r_{n+1} & = & s^2(r_n + q) N(x_n) - s^2 q;
 	\nonumber\\
-	u_{n+1} & = & s u_n E(x_n)
-\end{eqnarray*}
-where
+	u_{n+1} & = & s u_n E(x_n).
+\end{eqnarray}
+Here
 \begin{equation*}
-	q = s^{2n} \frac{\beta \hat{\Phi}_0}{V} \left(\frac{\hat{\Phi}_{B_{n+1}, B_n}}{\hat{\Phi}_0} - 1\right)
+	q = s^{2n} \frac{\beta \hat{\Phi}_0}{V} \left(\frac{\hat{\Phi}_{B_{n+1}, B_n}}{\hat{\Phi}_0} - 1\right) = -\frac{\beta \hat{\Phi}_0}{V} \bar{q}
 \end{equation*}
+where
+\begin{equation}
+	\bar{q} = -s^{2n} \left(\frac{\hat{\Phi}_{B_{n+1}, B_n}}{\hat{\Phi}_0} - 1\right).
+\end{equation}
 The recurrence relations~\eqref{RR_final} possess a fixed point solution in the limit of $n \to \infty$. By definition, the fixed point solution means
 \begin{equation*}
 	r_{n+1} = r_n = r^*; \quad u_{n+1} = u_n = u^*
@@ -416,11 +420,14 @@ From the last equality it follows
 \begin{equation}
 	sE(x^*) = 1.
 \end{equation}
-It is practical to chose $x^* = 0$, which is equivalent to $d_2^{(n)}(0) = 0$ at the fixed point, and gives $s = s^* = 3.5862$. We will use this value of $s$ to obtain particular numerical and graphical results. From the first recurrence relation it follows
+It is practical to chose $x^* = 0$, which is equivalent to $\lim_{n \to \infty}d_2^{(n)}(0) = d_2^* = 0$ at the fixed point, and gives $s = s^* = 3.5862$. We will use this value of $s$ to obtain particular numerical and graphical results. From the first recurrence relation it follows
 \begin{equation*}
 	r^* = -q\frac{N(x^*) - 1}{N(x^*) - s^{-2}}.
 \end{equation*}
-At $x^* = 0$, $r^* = q$ because $\lim_{x \to 0} (N(x) -1)/(N(x) - s^{-2}) = 1.$ 
+At $x^* = 0$, $r^* = -q$ because 
+$$
+\lim_{x \to 0} \frac{N(x) -1}{N(x) - s^{-2}} = 1.
+$$ 
 
 Finally, from 
 \begin{equation*}
@@ -430,3 +437,157 @@ one finds the following expression for $u^*$
 \begin{equation*}
 	u^* = \frac{3 q^2}{(x^*)^2} \left[\frac{1 - s^{-2}}{N(x^*) - s^{-2}}\right]^2.
 \end{equation*}
+
+Taking into account the results of the following Subsection~\ref{sec:parab_pot}, we can write down the coordinates of the fixed point:
+\begin{equation}
+	r^* = - {\frac{\beta \abs{\hat{\Phi}_0}}{V}} \bar{r}, 
+	\quad 
+	u^* = \left(\frac{\beta \hat{\Phi}_0}{V}\right)^2 \bar{u}
+\end{equation}
+where
+\begin{equation*}
+	\bar{r} = \frac{N(x^*) - 1}{N(x^*) - s^{-2}} \bar{q}, 
+	\quad 
+	\bar{u} = \frac{3}{(x^*)^2} \left(\frac{1 - s^{-2}}{N(x^*) - s^{-2}}\right)^2 \bar{q}^2.
+\end{equation*}
+We consider potentials with $\hat{\Phi}_0 < 0$, thus we can write $\hat{\Phi}_0 = -\abs{\hat{\Phi}_0}$
+
+Let's use the linear approximation for the recurrence relations~\ref{RR_final}
+\begin{equation}
+	\label{eq:linear_rr}
+	\left(
+		\begin{array}{c}
+			r_{n+1} - r^* \\
+			u_{n+1} - u^*
+		\end{array}
+	\right)
+	= R
+	\left(
+		\begin{array}{c}
+			r_{n} - r^* \\
+			u_{n} - u^*
+		\end{array}
+	\right)
+\end{equation}
+Let us calculate the elements of the linearized renormalization group transformation matrix $R$.
+\begin{equation*}
+	R_{11} = \left(\frac{\partial r_{n+1}}{\partial r_n}\right)^* = s^2 \left[N(x^*) + x^* \left(\frac{\partial N(x)}{\partial x} \right)_{x=x^*} \right],
+\end{equation*}
+\begin{equation*}
+	R_{12} = \left(\frac{\partial r_{n+1}}{\partial u_n}\right)^* = \frac{R_{12}^{(0)}}{\sqrt{u^*}},
+\end{equation*}
+\begin{equation*}
+	R_{21} = \left(\frac{\partial u_{n+1}}{\partial r_n}\right)^* = R_{21}^{(0)} \sqrt{u^*},
+\end{equation*}
+\begin{equation*}
+	R_{22} = \left(\frac{\partial u_{n+1}}{\partial u_n}\right)^* = s \left[E(x^*) - \frac{x^*}{2} \left(\frac{\partial E(x)}{\partial x}\right)_{x=x^*}\right].
+\end{equation*}
+Here the star refers to the fixed-point values, and
+\begin{equation*}
+	R_{12}^{(0)} = -\frac{s^2}{2\sqrt{3}} (x^*)^2 \left(\frac{\partial N(x)}{\partial x} \right)_{x=x^*},
+\end{equation*}
+\begin{equation*}
+	R_{21}^{(0)} = s\sqrt{3} \left(\frac{\partial E(x)}{\partial x}\right)_{x=x^*}.
+\end{equation*}
+Note that that following results were used for calculation the matrix elements:
+\begin{equation*}
+	\left(\frac{\partial x_n}{\partial r_n}\right)^* = \frac{\sqrt{3}}{\sqrt{u^*}}, 
+	\quad
+	\left(\frac{\partial x_n}{\partial u_n}\right)^* = - \frac{x^*}{2u^*}.
+\end{equation*}
+
+The eigenvalues for the matrix $R$ are
+\begin{equation*}
+	E_1 = \frac{1}{2} \left\{ (R_{11} + R_{22}) + \left[(R_{11} - R_{22})^2 + 4 R_{12}^{(0)}R_{21}^{(0)}\right]^{1/2}\right\},
+\end{equation*}
+\begin{equation*}
+	E_2 = \frac{1}{2} \left\{ (R_{11} + R_{22}) - \left[(R_{11} - R_{22})^2 + 4 R_{12}^{(0)}R_{21}^{(0)}\right]^{1/2}\right\},
+\end{equation*}
+and the eigenvectors are
+\begin{equation*}
+	W_1 = W_{11} \left(
+	\begin{array}{ll}
+		1 
+		\\ 
+		R_1
+	\end{array}
+	\right)
+	, \quad
+	W_1 = W_{11} \left(
+	\begin{array}{ll}
+		R 
+		\\ 
+		1
+	\end{array}
+	\right)
+\end{equation*}
+where 
+\begin{equation*}
+	R = \frac{R_{12}}{E_2 - R_{11}}, \quad R_1 = \frac{E_1 - R_{11}}{R_{12}},
+\end{equation*}
+and constants $W_{11}$ and $W_{22}$ are yet to be determined.
+Thus the solution to the linear recurrence relations~\eqref{eq:linear_rr} can be written as
+\begin{equation}
+	\left(
+	\begin{array}{ll}
+		r_n - r^*
+		\\
+		u_n - u^*
+	\end{array}
+	\right)
+	= c'_1 W_1 E_1^n + c'_2 W_2 E_2^n,
+\end{equation}
+where $c'_1$ and $c'_2$ are some constants. We arrive at the following equatinos for $r_n$ and $u_n$:
+\begin{eqnarray}
+	r_n & = & r^* + c_1 E_1^n + c_2 R E_2^n,
+	\nonumber \\
+	u_n & = & u^* + c_1 R_1 E_1^n + c_2 E_2^n,
+\end{eqnarray}
+where $c_1 = W_{11} c'_1,$ $c_2 = W_{22} c'_2$, and are to be determined from the initial conditions at $n=0$:
+\begin{equation*}
+	r_0 = a_2 + \frac{\beta\hat{\Phi}_0}{V},
+	\quad
+	u_0 = a_4,
+\end{equation*}
+that leads to
+\begin{eqnarray*}
+	c_1 & = & (r_0 - r^* -(u_0 - u^*)R)D^{-1},
+	\\
+	c_2 & = &  (u_0 - u^* - (r_0 - r^*)R_1)D^{-1},
+\end{eqnarray*}
+where
+\begin{equation*}
+	D = 1 - R_1 R = \frac{E_1 - E_2}{R_{11} - E_2}.
+\end{equation*}
+
+The fixed point solution should obey the recurrence relations in the critical point. Since $E_1 > 1$, it follows that the following condition must be true
+\begin{equation*}
+	c_1(T_c) = 0.
+\end{equation*}
+In explicit form, $c_1$ is written as
+\begin{equation*}
+	c_1 = 
+	\left(
+		a_2 - (1 - \bar{r} - R^{(0)}\sqrt{\bar{u}})\frac{\beta \abs{\hat{\Phi}_0}}{V} + \frac{a_4 R^{(0)}}{\sqrt{\bar{u}}} \left(\frac{\beta \abs{\hat{\Phi}_0}}{V}\right)^{-1}
+	\right) D^{-1}
+\end{equation*}
+and one gets the equation for the critical temperature
+\begin{equation}
+	\left(1 - \bar{r} - R^{(0)}\sqrt{\bar{u}} \right) \left(\frac{\beta \abs{\hat{\Phi}_0}}{V}\right)^{2} - a_2  \frac{\beta \abs{\hat{\Phi}_0}}{V} + \frac{a_4 R^{(0)}}{\sqrt{\bar{u}}} = 0,
+\end{equation}
+which is a quadratic equation for $\beta \abs{\hat{\Phi}_0}/{V}$. Out of two solutions to this equation, we select the one that gives positive value for the critical temperature:
+\begin{equation}
+	\label{eq:T_c}
+	T^*_c \equiv \frac{k_{\rm B} T_c}{\varepsilon} = \frac{\abs{\hat{\Phi}_0}}{\varepsilon V}
+	\left(
+		\frac
+		{a_2 + \sqrt{a_2^2 - 4 a_4 R^{(0)}\bar{u}^{-1/2} (1 - \bar{r} - R^{(0)}\bar{u}^{1/2}) } }
+		{2(1 - \bar{r} - R^{(0)}\bar{u}^{1/2})}
+	\right)^{-1}.
+\end{equation}
+
+We have obtained an explicit expression for the critical temperature. It is expressed in terms of the Fourier transform of the long-range part of interaction potential at the long-wave limit, i.e. at $\vb k = 0,$ of coefficients $a_2$ and $a_4$, which are calculated only based on the reference system, and on the details of averaging the potentials along the layer-by-layer integration (which is equivalent to the renormalization group transformation due to Wilson and Kadanoff [REFERENCE NEEDED]). 
+
+Note also that the value of the critical temperature depends on the density, or rather packing fraction $\eta$ of the reference system. One possible approach to find the critical value of $\eta_c$ is from the condition that the average number of particles of the reference system is equal to that of the whole system $\langle N \rangle_{RS} = \langle N \rangle$, see~\cite{RomaJPS2024} for details. This condition is essentially a mean field approximation for the critical density~\cite{CaillolPatsahan2005,CaillolPatsahan2006}, but since the dependence of $T^*_c$ on $\eta$ is smooth, see Figure~2, we will use the critical value of $\eta_c = 0.13044$ found from this condition in~\cite{YukhJSP1995}.
+
+In what follows we're going to calculate numerical values for $T^*_c$ following from Eq~\eqref{eq:T_c} for a few model system of type ``hard spheres with long-range interaction'', and compare the results obtained from our analytical approach with known results from computer simulations.

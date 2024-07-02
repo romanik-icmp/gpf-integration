@@ -1,0 +1,76 @@
+\section{\label{sec:results}Results. Critical temperature for model interaction potentials}
+
+\begin{table}[h]
+	\caption{Critical temperature for different values of $R_0/\alpha$.}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			%\begin{tabular}{cccccccccc}
+			\hline
+			\multicolumn{2}{|c|}{Morse} & \multicolumn{3}{|c|}{Yukawa}\\
+			\hline
+			$R_0/\alpha$ \quad & $T_c^*$ \quad & $\lambda$ & $T_c^*$ & $T_c^*$ [1] \\
+			\hline
+			2.0  & 4.2852 & 0.5 & 4.4921 & 7.009 \\
+			2.5  & 2.1593 & 1.0 & 1.9436 & 2.486 \\
+			3.0  & 1.3418 & 1.5 & 1.3895 & 1.634 \\
+			3.5  & 0.9396 & 1.8 & 1.2662 & 1.228 \\
+			4.0  & 0.7096 & 2.0 & 1.2268 & 1.031 \\
+			4.5  & 0.5641 & 2.5 & 1.2278 & 0.836 \\
+			5.0  & 0.4652 & 3.0 & 1.3403 & 0.722 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:morse_temp_cr}
+\end{table}
+
+\begin{table}[h]
+	\caption{Critical temperature of the hard-core square-well fluid for different values of $\lambda$.}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			%\begin{tabular}{cccccccccc}
+			\hline
+			\multicolumn{3}{|c|}{Square-well}\\
+			\hline
+			$\lambda$ & $T_c^*$ (WCA) & $T_c^*$ \cite{KreiciNezbeda2012} \\
+			\hline
+			1.25 & 0.78 & 0.75 \\
+			1.50 & 1.26 & 1.25 \\
+			1.75 & 1.92 & 1.88 \\
+			2.00  & 2.79 & 2.72 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:sw_temp_cr}
+\end{table}
+
+In this section we present numerical results for critical temperature calculated by Eq.~\eqref{eq:T_c} for a few van der Waals hard-core models~\cite{KreiciNezbeda2012}. We consider the following potentials as the long-range attractive part of the whole potential: the Morse potential, the square-well potential, the Yukawa potential, the Lennard-Jones $m-n$ potential, and the Sutherland potential. The expressions for all these potentials as well as for the corresponding Fourier transforms $\hat{\Phi}_{\vb k}$ are presented in Appendix~\ref{app:potentials}.
+
+First, we start with the Morse potential~\eqref{def:morse}. The results are presented in Table~\ref{tab:morse_temp_cr}.  We have not found other works that study the hard-core Morse fluid, but we include the results here since it has been the model often considered in the collective variables approach with HS as a reference system~\cite{Yukh1990,YukhJSP1995,PatsJSP1995}, as well as without employing additional RS~\cite{PylMpkDobUPJ2023b,PylJML2023}. The Morse potential is characterized by the ratio of its parameters $R_0/\alpha$. With increasing $R_0/\alpha$, the range of interaction decreases, or in other words, the potential well becomes narrower. It is seen from the results that the critical temperature decreases as the range of interaction decreases. This trend is a common fact~\cite{KreiciNezbeda2012,MendoubWaxJakse2010}.
+
+The results for the square-well potential~\eqref{def:sw} are presented in Table~\ref{tab:sw_temp_cr}. The results are compared with the ones reported in~\cite{KreiciNezbeda2012} for their perturbed virial expansion of the second order (PVE2). The work~\cite{KreiciNezbeda2012} contains a few results for the hard-core square-well model obtained by different methods as well as references to computer simulation results. This potential is characterized by the parameter $\lambda$. Increasing $\lambda$ one increases the width of the square well, and thus the range of the interaction increases. As is seen from the results, the critical temperature increases as the range of interaction increases. Overall, the agreement of the critical temperature for the square-well potential obtained within our approach agrees very well with the known results for this model. Note that the WCA regularization is applied to the potential in this case.
+
+\begin{table}[h]
+	\caption{Critical temperature of the hard-core Yukawa fluid for different values of $\lambda$.}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			%\begin{tabular}{cccccccccc}
+			\hline
+			\multicolumn{4}{|c|}{Yukawa}\\
+			\hline
+			$\lambda$ & $T_c^*$ & $T_c^*$ (WCA)& $T_c^*$ \cite{MendoubWaxJakse2010} \\
+			\hline
+			0.5 & 6.15 & 7.24 & 7.009 \\
+			1.0 & 2.07 & 2.69 & 2.486 \\
+			1.5 & 1.16 & 1.69 & 1.634 \\
+			1.8 & 0.90 & 1.41 & 1.228 \\
+			2.0 & 0.79 & 1.28 & 1.031 \\
+			2.5 & 0.59 & 1.07 & 0.836 \\
+			3.0 & 0.47 & 0.94 & 0.722 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:yukawa_temp_cr}
+\end{table}
+
+The results for the critical temperatures of the hard-core Yukawa model~\eqref{def:yukawa} are presented in Table~\ref{tab:yukawa_temp_cr}. The results are compared with the ones reported in~\cite{MendoubWaxJakse2010}, wherein other results for the critical temperature of the hard-core Yukawa model are presented. The Yukawa potential is characterized by the parameter $\lambda$. With increasing $\lambda$ the potential well gets narrower, thus the range of interaction decreases. As is seen from the results, the critical temperature decreases as the range of interaction decreases. Here we present our results for two cases, with and without applying the Weeks Chandler Andersen regularization. It is seen that the critical temperature calculated without applying WCA regularization tends to be lower compared to the known results, while the one with applying it tends to be higher.
+

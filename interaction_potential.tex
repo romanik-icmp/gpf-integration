@@ -1,0 +1,95 @@
+\section{\label{sec:parab_pot} Interaction potentials. Parabolic approximation}
+The potential energy of the inter-particle interaction is written in the form
+\begin{eqnarray*}
+	U_N(\vb r^N) &=& \frac12 \underset{i\neq j}{\sum_{i=1}^N \sum_{j=1}^N} \Psi(r_{ij}) 
+	+ \frac12 \underset{i\neq j}{\sum_{i=1}^N \sum_{j=1}^N} \Phi(r_{ij}).	
+\end{eqnarray*}
+Here $\Psi(r)$ corresponds for the short-range repulsive interaction, and $\Phi(r)$ for the long-range attractive interaction. In this work the hard-sphere (HS) potential is taken for $\Psi(r)$
+\begin{equation*}
+	\Psi(r) = 
+	\left\{
+	\begin{array}{cc}
+		\infty, \quad r\leq \sigma, \\
+		0, \quad r > \sigma
+	\end{array}
+	\right.
+\end{equation*}
+where $\sigma$ denotes the hard-sphere diameter. The long-range term $\Phi(r)$ is chosen so that it possesses a potential well at $r \geq \sigma$
+\begin{equation}
+	\label{def:long-range-potential}
+	\Phi(r) = \left\{
+	\begin{array}{cc}
+		0, & r \leq \sigma, 
+		\\
+		\phi(r), & r > \sigma.
+	\end{array}
+	\right.
+\end{equation}
+where $\phi(r)$ denotes an attractive part of the interaction and is chosen in the form a few widely used potentials later.
+Separation in~\eqref{def:long-range-potential} is not the only way to select the form for $\Phi(r)$ inside the hard-core region. One popular approach is the Weeks-Chandler-Andersen (WCA) regularization originated from~\cite{WCA1971}, according to which one has
+\begin{equation}
+	\label{def:long-range-potential_wca}
+	\Phi(r) = \left\{
+	\begin{array}{cc}
+		-\varepsilon, & r \leq r_{\rm m}, 
+		\\
+		\phi(r), & r > \sigma.
+	\end{array}
+	\right.
+\end{equation}
+where $r_{\rm m}$ is the coordinate of the potential minimum. We use the WCA regularization schema for most of the potentials considered in Section~\ref{sec:results}.
+
+It is additionally assumed that the attractive part of the interaction potential possesses a well behaved Fourier component $\hat{\Phi}_{\vb k}$ such that:
+\begin{equation*}
+	\Phi(r) = \frac{1}{V} \sum_{\vb k} \hat{\Phi}_{\vb k} {\rm e}^{i\vb k \vb r} = \frac{1}{(2\pi)^3} \int {\rm d} {\vb k} \hat{\Phi}_{\vb k} {\rm e}^{i\vb k \vb r},
+\end{equation*}
+and
+\begin{equation}
+	\label{def:fourier}
+	\hat{\Phi}_{\vb k} = \int \Phi(r) {\rm e}^{-i\vb k \vb r} {\rm d} {\vb r}.
+\end{equation}
+Converting to spherical coordinates, and integrating over the angle variables, one arrives at
+\begin{equation}
+	\label{def:fourier_spherical}
+	\hat{\Phi}(k) = \frac{4\pi}{k} \int_{0}^{\infty} r \Phi(r) \sin(k r) {\rm d} r.
+\end{equation}
+
+Several model potentials are be taken for $\phi$ in the next Section~\ref{sec:results}. 
+
+To proceed with analytic calculations of the fixed point coordinates, and to get some numerical results, let us apply the so-called parabolic approximation for the Fourier component of the interaction potential
+\begin{equation*}
+	\hat{\Phi}_{\vb k} = \hat{\Phi}_0 (1 - 2b^2k^2),
+\end{equation*}
+where 
+\begin{equation*}
+	2b^2 = -\frac{1}{2\hat{\Phi}_0} \frac{\partial^2 \hat{\Phi}_k}{\partial k^2} \bigg|_{k=0}.
+\end{equation*}
+Then let us select the cut-off parameter as
+$$
+B_0 = \frac{1}{\sqrt{2} b}.
+$$
+For $\hat{\Phi}_{B_{n+1}, B_n}$, in the case of arithmetic average, it follows
+\begin{equation*}
+	\hat{\Phi}_{B_{n+1}, B_n} = \hat{\Phi}_0 \left(1 - s^{-2n} \frac{1 + s^{-2}}{2}\right)
+\end{equation*}
+and for $q$ one obtains
+\begin{equation*}
+	q = -\frac{\beta \hat{\Phi}_0}{V} \bar{q}, \quad \bar{q} = \frac{1 + s^{-2}}{2},
+\end{equation*}
+with $\bar{q} = 0.5389$.
+
+In the case of spherical averaging
+\begin{equation*}
+	\hat{\Phi}_{B_{n+1}, B_n} = \frac{\int_{B_{n+1}}^{B_n} \hat{\Phi}_{\vb k} {\rm d} {\vb k}}
+	{\int_{B_{n+1}}^{B_n} {\rm d} {\vb k}} 
+	= \frac{\hat{\Phi}_0 \int_{B_{n+1}}^{B_n} (1 - 2b^2k^2) k^2 {\rm d} k}{\int_{B_{n+1}}^{B_n} k^2 {\rm d} k}
+\end{equation*}
+one gets
+\begin{equation*}
+	\hat{\Phi}_{B_{n+1}, B_n} = \hat{\Phi}_0 \left(1 - s^{-2n} \frac{3(1 - s^{-5})}{5(1 - s^{-3})}\right)
+\end{equation*}
+and for $q$
+\begin{equation*}
+	q = -\frac{\beta \hat{\Phi}_0}{V} \bar{q}, \quad \bar{q} = \frac{3(1 - s^{-5})}{5(1 - s^{-3})},
+\end{equation*}
+with $\bar{q} = 0.6123$ at $s = s^*$.

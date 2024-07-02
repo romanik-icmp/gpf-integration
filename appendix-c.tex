@@ -1,0 +1,113 @@
+\section{\label{app:potentials}Long-range attractive potentials}
+In this appendix we present explicit expressions for the attractive part of interaction potential $\hat{\Phi}_{\vb k}$ defined by~\eqref{def:long-range-potential} and~\eqref{def:fourier}.
+
+The Morse potential is given by
+\begin{equation}
+	\label{def:morse}
+	\phi(r) = \varepsilon \{\exp{[-2(r-R_0)/\alpha]}-2\exp{[-(r-R_0)/\alpha]}\}.
+\end{equation}
+Its Fourier transform is
+\begin{equation*}
+	\hat{\phi}_{\vb k} = -16\pi\varepsilon\alpha^3 {\rm e}^{R_0/\alpha} 
+	\left[\frac{1}{(1 + \alpha k^2)^2} - \frac{{\rm e}^{R_0/\alpha}}{(4 + \alpha^2 k^2)^2}\right],
+\end{equation*}
+and the Fourier transform $\hat{\Phi}_{\vb k}$ is
+\begin{eqnarray*}
+	\label{eq:part_morse_fourier}
+	\hat{\Phi}_k &=& -16\pi \varepsilon \alpha^3 
+	\left[
+	\frac{1}{1+k^2\alpha^2}\left(\frac{\sigma}{\alpha} + \frac{2}{1+k^2\alpha^2}\right) \cos(k\sigma)
+	\right.
+	\nonumber\\
+	&& \left.
+	-\frac{1}{4 + k^2\alpha^2} \left(\frac{\sigma}{\alpha} + \frac{4}{4 + k^2\alpha^2}\right) \cos(k\sigma)
+	\right.
+	\nonumber \\
+	&& \left.
+	+ \frac{\sigma/\alpha}{1 + k^2\alpha^2} \left(\frac{\sigma}{\alpha} + \frac{1 - k^2\alpha^2}{1 + k^2 \alpha^2}\right) \frac{\sin(k\sigma)}{k\sigma}
+	\right.
+	\nonumber\\
+	&& \left.
+	- \frac{\sigma/\alpha}{4 + k^2\alpha^2} \left(2\frac{\sigma}{\alpha} + \frac{4 - k^2\alpha^2}{4 + k^2\alpha^2}\right) \frac{\sin(k\sigma)}{k\sigma}
+	\right].
+\end{eqnarray*}
+
+The Yukawa potential is given by
+\begin{equation}
+	\label{def:yukawa}
+	\phi^Y(r) = -\frac{\varepsilon \sigma}{r} \exp(-\lambda(r - \sigma)).
+\end{equation}
+Its Fourier transform is
+\begin{equation*}
+	\hat{\phi}^Y_{\vb k} = -\frac{4\pi \varepsilon \sigma^3 {\rm e}^{\lambda}}{\lambda^2 + \sigma^2 k^2},
+\end{equation*}
+and the Fourier transform $\hat{\Phi}_{\vb k}$ is
+\begin{eqnarray*}
+	\label{eq:part_yukawa_fourier}
+	\hat{\Phi}_k & = & -\frac{4\pi \varepsilon\sigma^3}{(\lambda^2 + \sigma^2 k^2)}
+	\left[\cos(\sigma k) + \lambda \frac{\sin(\sigma k)}{\sigma k} \right]
+\end{eqnarray*}
+
+The square-well potential is given by
+\begin{equation}
+	\label{def:sw}
+	\begin{array}{llll}
+		\phi^{SW}(r) & = & \infty, & \text{if } r\leq \sigma,
+		\\
+		& = & -\varepsilon, & \text{if } \sigma < r \leq \lambda\sigma,
+		\\
+		& = & 0, & \text{if } r > \sigma.
+	\end{array}
+\end{equation}
+Its Fourier transform does not exist, and the Fourier transofrm $\hat{\Phi}_{\vb k}$ in this case is
+\begin{eqnarray*}
+	\hat{\Phi}_k & = & -\frac{4\pi\varepsilon\sigma^3}{(\sigma k)^3} 
+	\left[\sin(\lambda \sigma k) - \lambda \sigma k \cos(\lambda \sigma k) - \sin(\sigma k) + \sigma k \cos(\sigma k)\right].
+\end{eqnarray*}
+We however will apply the Weeks-Chandler-Andersen regularization for the square-well potential
+in the hard-core region
+\begin{equation}
+	\label{def:sw-wca}
+	\Phi(r) = \left\{
+	\begin{array}{cc}
+		-\varepsilon, & r \leq \sigma, 
+		\\
+		\phi^{SW}(r), & r > \sigma,
+	\end{array}
+	\right.
+\end{equation}
+since for such choice the agreement of critical temperature values with known results for this model is much better. The Fourier transform $\hat{\Phi}_{\vb k}$ in this case is
+\begin{eqnarray*}
+	\hat{\Phi}_k & = & -\frac{4\pi\varepsilon\sigma^3}{(\sigma k)^3} 
+	\left[\sin(\lambda \sigma k) - \lambda \sigma k \cos(\lambda \sigma k)\right].
+\end{eqnarray*}
+
+The Lennard-Jones potential is given by
+\begin{equation}
+	\phi^{LJ}(r) = 4\varepsilon \left[(\sigma/r)^{12} - (\sigma/r)^6\right].
+\end{equation}
+The hard-core Lennard-Jones fluid is defined in literature~\cite{SowersStanley1991,DiezLargoSolana2010} as
+\begin{equation}
+	\phi^{LJ}(r) = \left\{
+	\begin{array}{llll}
+		\infty, & r\leq \sigma,
+		\\
+		-\varepsilon, & \sigma < r \leq r_{\rm m}, 
+		\\
+		4\varepsilon \left[(\sigma/r)^{12} - (\sigma/r)^6\right], & r > r_{\rm m},
+	\end{array}
+	\right.
+\end{equation}
+where $r_{\rm m}=2^{1/6}\sigma$.
+In this case it is easy to apply the WCA regularization
+\begin{equation}
+	\label{def:lj_wca}
+	\Phi(r) = \left\{
+	\begin{array}{ll}
+		-\varepsilon, & r \leq r_{\rm m},
+		\\
+		4\varepsilon \left[(\sigma/r)^{12} - (\sigma/r)^6\right], & r > r_{\rm m}.
+	\end{array}	
+	\right.
+\end{equation}
+We do not present the explicit formula for the Fourier transform of potential defined by~\eqref{def:lj_wca}, since it is a somewhat cumbersome, but its calculation by~\eqref{def:fourier_spherical} is straightforward.
