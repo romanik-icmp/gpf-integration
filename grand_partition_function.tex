@@ -1,16 +1,18 @@
 \section{\label{sec:init-gpf} Grand partition function in the representation of collective variables}
-The grand partition function (GPF) of a simple many-particle interacting system is represented as
+The grand partition function (GPF) of a simple many-particle interacting system can be represented as~\cite{Yukh1990,YukhJSP1995,RomaJPS2024}
 \begin{equation}
 	\label{Xi_as_prod}
 	\Xi = \Xi_0\Xi_G\Xi_L.
 \end{equation}
-Here $\Xi_0$ is the GPF of a reference system, which is assumed to be known. $\Xi_G$ is a short-wave contribution to the GPF with wave-vectors $\abs{\vb{k}}>B_0$, with $B_0$ being the cut-off parameter.
-The quantity $\Xi_L$ denotes long-wave contributions to the GPF and is the object of our investigation in this paper. The expression for $\Xi_L$, obtained in~\cite{RomaJPS2024} (see also~\cite{Roma2023Preprint} for more details) is as follows:
+Here $\Xi_0$ is the GPF of a reference system (RS), which is assumed to be known. $\Xi_G$ is a short-wave contribution to the GPF with wave-vectors $\abs{\vb{k}}>B_0$, $B_0$ being the cut-off parameter.
+The quantity $\Xi_L$ denotes long-wave contributions to the GPF and is the object of our investigation in this paper. In our previous paper~\cite{RomaJPS2024} we provided very detailed derivation of the expression for $\Xi_L$ (see~\cite{Roma2023Preprint} for even more details) and presented it as follows:
 \begin{equation}
 	\label{Xi_L}
-	\Xi_L = j_0Q(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)^{N_0} \exp(\tilde{\mathfrak{M}}_0) \Xi_L^{(1)}
+	\Xi_L = j_0Q(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)^{N_0} \exp(\tilde{\mathfrak{M}}_0) \Xi_L^{(1)},
 \end{equation} 
-Explicit expressions for $j_0,$ $Q(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)$ and $\tilde{\mathfrak{M}_0}$ are given in Appendix~A, $\Xi_L^{(1)}$ is defined as
+where $j_0=\sqrt{2}^{N_0 - 1},$ $N_0$ being determined in~\eqref{def:NB} below, $Q(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)$ and $\tilde{\mathfrak{M}_0}$ are explicitly given in Appendix~\ref{sec:app-a}.
+
+The quantity $\Xi_L^{(1)}$ stands for
 \begin{eqnarray}
 	\label{Xi_L_1}
 	\Xi_L^{(1)} &=& 
@@ -20,31 +22,31 @@ Explicit expressions for $j_0,$ $Q(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)$ and 
 	&& -\left. \frac{a_4}{4! N_0} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_0}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4} \right) ({\rm d} \rho)^{N_0}
 	\nonumber.
 \end{eqnarray}
-Here $d_2(k) = a_2 + \frac{\beta\hat{\Phi}_{\vb k}}{V}$, with $\beta$ being the inverse temperature, $V$ the volume, $\hat{\Phi}_{\vb k}$ the Fourier component of the long-range part of the interaction potential.
-Quantities $\mu^*$, $a_2$ and $a_4$ are functions of the reference-system packing fraction $\eta$, temperature $T$, and microscopic parameters of interaction potential. They are explicitly presented in Appendix~A. The quantity $\mu^*$ also linearly depends on the chemical potential $\mu$.
+Here $d_2(k) = a_2 + \frac{\beta\hat{\Phi}_{\vb k}}{V}$, $\beta$ being the inverse temperature, $V$ the volume, $\hat{\Phi}_{\vb k}$ the Fourier component of the long-range part of the interaction potential.
+Quantities $\mu^*$, $a_2$ and $a_4$ are functions of the RS particle density $\rho$, temperature $T$, and microscopic parameters of interaction potential. They are explicitly presented in Appendix~\ref{sec:app-a}. The quantity $\mu^*$ also linearly depends on the chemical potential $\mu$.
 
 The wave vector $\vb k$ takes on $N_0$ values in a sphere of radius $B_0$, so that
 \begin{equation}
-	\label{NB}
+	\label{def:NB}
 	N_0 = \frac{B_0^3}{6\pi^2}V.
 \end{equation}
 Thus the number of variables to be integrated over is equal to $N_0$
 \begin{equation*}
 	(d\rho)^{N_0} = {\rm d}\rho_0 \prod_{\vb k\atop k\le B_0}' {\rm d}\rho_{\vb k}^c {\rm d}\omega_{\vb k}^s
 \end{equation*}
-where $\rho_{\vb k}^c$ and $\rho_{\vb k}^s$ are the real and imaginary parts of the collective variable $\rho_{\vb k} = \rho_{\vb k}^c - {\rm i} \rho_{\vb k}^s$ respectively. The 'prime' sign over the product means that the wave-vector takes on values only form the upper semi-sphere, i.e. $k_z > 0$ and $\vb k \neq 0$.
+where $\rho_{\vb k}^c$ and $\rho_{\vb k}^s$ are the real and imaginary parts of the collective variable $\rho_{\vb k} = \rho_{\vb k}^c - {\rm i} \rho_{\vb k}^s$, respectively\footnote{Traditionally, the collective variables are denoted by $\rho_{\vb k}$, and the element of integration over CVs is denoted by $({\rm d} \rho)$, while the particle density is denoted by $\rho$. We hope that it is clear from the context when $\rho$ is understood as the number density, and when it is related to CVs}. The 'prime' sign over the product means that the wave-vector takes on values only form the upper semi-sphere, i.e. $k_z > 0$ and $\vb k \neq 0$.
 
 The following simplification is used for the Kronecker symbol in~\eqref{Xi_L_1}
 \begin{equation*}
-	\delta_{\vb k} = \frac{1}{V} \int (\rm{d} \vb r) \rm{e}^{-{\rm i} \vb k \vb r} = \frac{1}{N_0}\sum_{\vb l} {\rm e}^{-{\rm i} \vb k \vb l}.
+	\delta_{\vb k} = \frac{1}{V} \int (\rm{d} \vb r) \rm{e}^{-{\rm i} \vb k \vb r} = \frac{1}{N_0}\sum_{\vb l_0} {\rm e}^{-{\rm i} \vb k \vb l_0}.
 \end{equation*}
-The summation over $\vb l$ implies that $\vb l$ takes on $N_0$ values in real space corresponding to the $N_0$ values of wave vector $\vb k$ in the sphere of radius $B_0$ in the reciprocal space. This is called a spherical approximation for the first Brillouin zone. It is assumed that a proper correspondance can be established between a spherical Brillouin zone and a structure in real space by analogy to how simple cubic lattice corresponds to its Brillouin zone in the Ising-model problem [REFERENCE NEEDED]. 
+The summation over $\vb l_0$ implies that $\vb l_0$ takes on $N_0$ values in real space corresponding to the $N_0$ values of wave vector $\vb k$ in the sphere of radius $B_0$ in the reciprocal space. This is called a spherical approximation for the first Brillouin zone. It is assumed that a proper correspondence can be established between a spherical Brillouin zone and a structure in real space by analogy to how simple cubic lattice corresponds to its Brillouin zone in the Ising-model problem [REFERENCE NEEDED]. 
 
 In what follows we also will understand that $\vb l \in \Lambda_0$ corresponds to vectors $\vb k$ such that $k \leq B_0$, $\vb l \in \Lambda_1$ to $k \leq B_1$, and in general $\vb l \in \Lambda_n$ to $k \leq B_n$. Here $B_n = B/s^n$ and $s$ is the renormalization parameter to be introduced later.
 
 The expression~\eqref{Xi_L_1} formally coincides with the expression for the partition function functional of the 3-dimentional Ising-like model in an external field [REFERENCE NEEDED]. 
 
-A necessary condition for this functional to give a critical-point solution is $\mu^* = 0$, which leads to a line of critical temperature dependence on the chemical potential $\mu$ (at some value of the reference system packing fraction $\eta_c$).
+A necessary condition for this functional to give rise to a critical-point solution is $\mu^* = 0$, which leads to a line of critical temperature dependence on the chemical potential $\mu$ (at some value of the reference system particle density $\rho_c$)~\cite{RomaJPS2024}.
 
 We are going to integrate~\eqref{Xi_L_1} following the method developed for calculation of the partition function of the 3-dimentional Ising-like models \cite{MpkCMP2005,Yukh1989riv}. The main idea is to divide the interval $[0, B_0]$ into sub-intervals $(B_1, B_0]$, $(B_2, B_1]$, $(B_3, B_2]$ and so on, where $B_1 = B_0/s$, $B_2 = B_1/s = B_2/s^2$, or in general $B_n = B_0/s^n$, $s$ being the renormalization group parameter, $s > 1.$ Variables $\rho_{\vb k}$ with $B_1 < k \leq B_0$ are said to belong to the first layer, $\rho_{\vb k}$ with $B_2 < k \leq B_1$ to the second one, and continuing in the same manner, $\rho_{\vb k}$ with $B_n < k \leq B_{n-1}$ to the $n$-th layer.
 The integration is performed iteratively, starting with integration over the collective variables of the first layer, then over the second one and so on.

@@ -3,25 +3,61 @@
 \begin{table}[h]
 	\caption{Critical temperature for different values of $R_0/\alpha$.}
 	\begin{center}
-		\begin{tabular}{|c|c|c|c|c|}
-			%\begin{tabular}{cccccccccc}
+		\begin{tabular}{|c|c|}
 			\hline
-			\multicolumn{2}{|c|}{Morse} & \multicolumn{3}{|c|}{Yukawa}\\
+			\multicolumn{2}{|c|}{HC Morse} \\
 			\hline
-			$R_0/\alpha$ \quad & $T_c^*$ \quad & $\lambda$ & $T_c^*$ & $T_c^*$ [1] \\
+			$R_0/\alpha$ \quad & $T_c^*$ \\
 			\hline
-			2.0  & 4.2852 & 0.5 & 4.4921 & 7.009 \\
-			2.5  & 2.1593 & 1.0 & 1.9436 & 2.486 \\
-			3.0  & 1.3418 & 1.5 & 1.3895 & 1.634 \\
-			3.5  & 0.9396 & 1.8 & 1.2662 & 1.228 \\
-			4.0  & 0.7096 & 2.0 & 1.2268 & 1.031 \\
-			4.5  & 0.5641 & 2.5 & 1.2278 & 0.836 \\
-			5.0  & 0.4652 & 3.0 & 1.3403 & 0.722 \\
+			2.0  & 4.2852 \\
+			2.5  & 2.1593 \\
+			3.0  & 1.3418 \\
+			3.5  & 0.9396 \\
+			4.0  & 0.7096 \\
+			4.5  & 0.5641 \\
+			5.0  & 0.4652 \\
 			\hline
 		\end{tabular}
 	\end{center}
 	\label{tab:morse_temp_cr}
 \end{table}
+
+In this section we present numerical results for critical temperature calculated by Eq.~\eqref{eq:T_c} for a few van der Waals hard-core models~\cite{KreiciNezbeda2012}. We consider the following potentials as the long-range attractive part of the whole interaction: the Morse potential, the square-well potential, the Yukawa potential, and the Lennard-Jones 6-12 potential. 
+%The expressions for all these potentials as well as for the corresponding Fourier transforms $\hat{\Phi}_{\vb k}$ are presented in Appendix~\ref{app:potentials}.
+
+We start with the Morse potential given by
+\begin{equation}
+	%\label{def:morse}
+	\phi^M(r) = \varepsilon \{\exp{[-2(r-R_0)/\alpha]}-2\exp{[-(r-R_0)/\alpha]}\}.
+\end{equation}
+This potential is characterized by the ratio of its parameters $R_0/\alpha$. With increasing $R_0/\alpha$, the range of interaction decreases, or in other words, the potential well becomes narrower.
+Its Fourier transform is
+\begin{equation*}
+	\hat{\phi}^M_{\vb k} = -16\pi\varepsilon\alpha^3 {\rm e}^{R_0/\alpha} 
+	\left[\frac{1}{(1 + \alpha k^2)^2} - \frac{{\rm e}^{R_0/\alpha}}{(4 + \alpha^2 k^2)^2}\right],
+\end{equation*}
+and the Fourier transform $\hat{\Phi}_{\vb k}$ is
+\begin{eqnarray*}
+	\label{eq:part_morse_fourier}
+	\hat{\Phi}_k &=& -16\pi \varepsilon \alpha^3 
+	\left[
+	\frac{1}{1+k^2\alpha^2}\left(\frac{\sigma}{\alpha} + \frac{2}{1+k^2\alpha^2}\right) \cos(k\sigma)
+	\right.
+	\nonumber\\
+	&& \left.
+	-\frac{1}{4 + k^2\alpha^2} \left(\frac{\sigma}{\alpha} + \frac{4}{4 + k^2\alpha^2}\right) \cos(k\sigma)
+	\right.
+	\nonumber \\
+	&& \left.
+	+ \frac{\sigma/\alpha}{1 + k^2\alpha^2} \left(\frac{\sigma}{\alpha} + \frac{1 - k^2\alpha^2}{1 + k^2 \alpha^2}\right) \frac{\sin(k\sigma)}{k\sigma}
+	\right.
+	\nonumber\\
+	&& \left.
+	- \frac{\sigma/\alpha}{4 + k^2\alpha^2} \left(2\frac{\sigma}{\alpha} + \frac{4 - k^2\alpha^2}{4 + k^2\alpha^2}\right) \frac{\sin(k\sigma)}{k\sigma}
+	\right].
+\end{eqnarray*}
+The results for critical temperature for the hard-core Morse model are presented in Table~\ref{tab:morse_temp_cr}. It is seen from the results that the critical temperature decreases as the range of interaction decreases. This trend is a common fact~\cite{KreiciNezbeda2012,MendoubWaxJakse2010}.
+We have not found other works that study the hard-core Morse fluid, but we include these results here since it has been the model often considered in the collective variables approach with HS as a reference system~\cite{Yukh1990,YukhJSP1995,PatsJSP1995}, as well as without employing additional RS~\cite{PylMpkDobUPJ2023b,PylJML2023}.
 
 \begin{table}[h]
 	\caption{Critical temperature of the hard-core square-well fluid for different values of $\lambda$.}
@@ -43,11 +79,42 @@
 	\label{tab:sw_temp_cr}
 \end{table}
 
-In this section we present numerical results for critical temperature calculated by Eq.~\eqref{eq:T_c} for a few van der Waals hard-core models~\cite{KreiciNezbeda2012}. We consider the following potentials as the long-range attractive part of the whole potential: the Morse potential, the square-well potential, the Yukawa potential, the Lennard-Jones $m-n$ potential, and the Sutherland potential. The expressions for all these potentials as well as for the corresponding Fourier transforms $\hat{\Phi}_{\vb k}$ are presented in Appendix~\ref{app:potentials}.
-
-First, we start with the Morse potential~\eqref{def:morse}. The results are presented in Table~\ref{tab:morse_temp_cr}.  We have not found other works that study the hard-core Morse fluid, but we include the results here since it has been the model often considered in the collective variables approach with HS as a reference system~\cite{Yukh1990,YukhJSP1995,PatsJSP1995}, as well as without employing additional RS~\cite{PylMpkDobUPJ2023b,PylJML2023}. The Morse potential is characterized by the ratio of its parameters $R_0/\alpha$. With increasing $R_0/\alpha$, the range of interaction decreases, or in other words, the potential well becomes narrower. It is seen from the results that the critical temperature decreases as the range of interaction decreases. This trend is a common fact~\cite{KreiciNezbeda2012,MendoubWaxJakse2010}.
-
-The results for the square-well potential~\eqref{def:sw} are presented in Table~\ref{tab:sw_temp_cr}. The results are compared with the ones reported in~\cite{KreiciNezbeda2012} for their perturbed virial expansion of the second order (PVE2). The work~\cite{KreiciNezbeda2012} contains a few results for the hard-core square-well model obtained by different methods as well as references to computer simulation results. This potential is characterized by the parameter $\lambda$. Increasing $\lambda$ one increases the width of the square well, and thus the range of the interaction increases. As is seen from the results, the critical temperature increases as the range of interaction increases. Overall, the agreement of the critical temperature for the square-well potential obtained within our approach agrees very well with the known results for this model. Note that the WCA regularization is applied to the potential in this case.
+We proceed with the square-well potential given by
+\begin{equation}
+	\label{def:sw}
+	\begin{array}{llll}
+		\phi^{SW}(r) & = & \infty, & \text{if } r\leq \sigma,
+		\\
+		& = & -\varepsilon, & \text{if } \sigma < r \leq \lambda\sigma,
+		\\
+		& = & 0, & \text{if } r > \sigma.
+	\end{array}
+\end{equation}
+This potential is characterized by the parameter $\lambda$. Increasing $\lambda$ one increases the width of the square well, and thus the range of interaction increases.
+Its Fourier transform does not exist, and the Fourier transform $\hat{\Phi}_{\vb k}$ in this case is
+\begin{eqnarray*}
+	\hat{\Phi}_k & = & -\frac{4\pi\varepsilon\sigma^3}{(\sigma k)^3} 
+	\left[\sin(\lambda \sigma k) - \lambda \sigma k \cos(\lambda \sigma k) - \sin(\sigma k) + \sigma k \cos(\sigma k)\right].
+\end{eqnarray*}
+We however will apply the WCA regularization for the square-well potential
+in the hard-core region
+\begin{equation}
+	\label{def:sw-wca}
+	\Phi(r) = \left\{
+	\begin{array}{cc}
+		-\varepsilon, & r \leq \sigma, 
+		\\
+		\phi^{SW}(r), & r > \sigma,
+	\end{array}
+	\right.
+\end{equation}
+since for such choice the agreement of critical temperature values with known results for this model is much better. The Fourier transform $\hat{\Phi}_{\vb k}$ in this case is
+\begin{eqnarray*}
+	\hat{\Phi}_k & = & -\frac{4\pi\varepsilon\sigma^3}{(\sigma k)^3} 
+	\left[\sin(\lambda \sigma k) - \lambda \sigma k \cos(\lambda \sigma k)\right].
+\end{eqnarray*}
+The results for such model are presented in Table~\ref{tab:sw_temp_cr}. The results are compared with the ones reported in~\cite{KreiciNezbeda2012} for their perturbed virial expansion of the second order (PVE2). The work~\cite{KreiciNezbeda2012} contains more results for the hard-core square-well model obtained by different methods as well as references to computer simulation results.  
+As is seen from the results, the critical temperature increases as the range of interaction increases. Overall, the agreement of the critical temperature for the square-well potential obtained within our approach agrees very well with the known results for this model.
 
 \begin{table}[h]
 	\caption{Critical temperature of the hard-core Yukawa fluid for different values of $\lambda$.}
@@ -55,7 +122,7 @@ The results for the square-well potential~\eqref{def:sw} are presented in Table~
 		\begin{tabular}{|c|c|c|c|}
 			%\begin{tabular}{cccccccccc}
 			\hline
-			\multicolumn{4}{|c|}{Yukawa}\\
+			\multicolumn{4}{|c|}{HC Yukawa}\\
 			\hline
 			$\lambda$ & $T_c^*$ & $T_c^*$ (WCA)& $T_c^*$ \cite{MendoubWaxJakse2010} \\
 			\hline
@@ -72,5 +139,89 @@ The results for the square-well potential~\eqref{def:sw} are presented in Table~
 	\label{tab:yukawa_temp_cr}
 \end{table}
 
-The results for the critical temperatures of the hard-core Yukawa model~\eqref{def:yukawa} are presented in Table~\ref{tab:yukawa_temp_cr}. The results are compared with the ones reported in~\cite{MendoubWaxJakse2010}, wherein other results for the critical temperature of the hard-core Yukawa model are presented. The Yukawa potential is characterized by the parameter $\lambda$. With increasing $\lambda$ the potential well gets narrower, thus the range of interaction decreases. As is seen from the results, the critical temperature decreases as the range of interaction decreases. Here we present our results for two cases, with and without applying the Weeks Chandler Andersen regularization. It is seen that the critical temperature calculated without applying WCA regularization tends to be lower compared to the known results, while the one with applying it tends to be higher.
+The next one is the Yukawa potential give by 
+\begin{equation}
+	\label{def:yukawa}
+	\phi^Y(r) = -\frac{\varepsilon \sigma}{r} \exp[-\lambda(r/\sigma - 1)].
+\end{equation}
+It is characterized by the parameter $\lambda$. With increasing $\lambda$ the potential well gets narrower, thus the range of interaction decreases.
+Its Fourier transform is
+\begin{equation*}
+	\hat{\phi}^Y_{\vb k} = -\frac{4\pi \varepsilon \sigma^3 {\rm e}^{\lambda}}{\lambda^2 + \sigma^2 k^2},
+\end{equation*}
+and the Fourier transform $\hat{\Phi}_{\vb k}$ is
+\begin{eqnarray*}
+	\label{eq:part_yukawa_fourier}
+	\hat{\Phi}_k & = & -\frac{4\pi \varepsilon\sigma^3}{(\lambda^2 + \sigma^2 k^2)}
+	\left[\cos(\sigma k) + \lambda \frac{\sin(\sigma k)}{\sigma k} \right].
+\end{eqnarray*}
+Applying the WCA regularization, one gets
+\begin{equation}
+	\label{def:yukawa_wca}
+	\phi^Y(r) = \left\{
+	\begin{array}{ll}
+		-\varepsilon, & r \leq \sigma 
+		\\
+		-\frac{\varepsilon \sigma}{r} \exp[-\lambda(r/\sigma - 1)], & r > \sigma,
+	\end{array}
+	\right.
+\end{equation}
+and thus
+\begin{eqnarray*}
+	\label{eq:wca_yukawa_fourier}
+	\hat{\Phi}_k & = & -4\pi \varepsilon\sigma^3 \left\{ 
+	\frac{\sin(\sigma k) - \sigma k \cos(\sigma k)}{(\sigma k)^3}
+	+\frac{1}{(\lambda^2 + \sigma^2 k^2)}
+	\left[\cos(\sigma k) + \lambda \frac{\sin(\sigma k)}{\sigma k} \right]
+	\right\}.
+\end{eqnarray*}
+The results for the critical temperatures of the hard-core attractive Yukawa model~\eqref{def:yukawa} are presented in Table~\ref{tab:yukawa_temp_cr}. They are compared with the ones reported in~\cite{MendoubWaxJakse2010} (wherein other results for the critical temperature of the hard-core Yukawa model can also be found). As is seen from the Table~\ref{tab:yukawa_temp_cr}, the critical temperature decreases as the range of interaction decreases. Our results are reported for two cases, with and without applying the WCA regularization. It is seen that the critical temperature calculated without applying WCA regularization tends to be lower compared to the known results, while the one with applying it tends to be higher.
+
+\begin{table}[h]
+	\caption{Critical temperature of the hard-core Lennard-Jones fluid}
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			%\begin{tabular}{cccccccccc}
+			\hline
+			\multicolumn{2}{|c|}{HC Lennard-Jones}\\
+			\hline
+			$T_c^*$ (WCA) & $T_c^*$ \cite{SowersStanley1991} \\
+			\hline
+			1.43 & 1.375 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:lj_temp_cr}
+\end{table}
+
+The final potential we consider in this paper is the Lennard-Jones one
+\begin{equation}
+	\phi^{LJ}(r) = 4\varepsilon \left[(\sigma/r)^{12} - (\sigma/r)^6\right].
+\end{equation}
+The hard-core Lennard-Jones fluid is defined in literature~\cite{SowersStanley1991,DiezLargoSolana2010} as
+\begin{equation}
+	\phi^{LJ}(r) = \left\{
+	\begin{array}{llll}
+		\infty, & r\leq \sigma,
+		\\
+		-\varepsilon, & \sigma < r \leq r_{\rm m}, 
+		\\
+		4\varepsilon \left[(\sigma/r)^{12} - (\sigma/r)^6\right], & r > r_{\rm m},
+	\end{array}
+	\right.
+\end{equation}
+where $r_{\rm m}=2^{1/6}\sigma$.
+In this case it is easy to apply the WCA regularization
+\begin{equation}
+	\label{def:lj_wca}
+	\Phi(r) = \left\{
+	\begin{array}{ll}
+		-\varepsilon, & r \leq r_{\rm m},
+		\\
+		4\varepsilon \left[(\sigma/r)^{12} - (\sigma/r)^6\right], & r > r_{\rm m}.
+	\end{array}	
+	\right.
+\end{equation}
+We do not present the explicit formula for the Fourier transform of potential defined by~\eqref{def:lj_wca}, since it is somewhat cumbersome, but its calculation by~\eqref{def:fourier_spherical} is straightforward. 
+The calculated critical temperature is present in Table~\ref{tab:lj_temp_cr}. Result from~\cite{SowersStanley1991} is given for comparison.
 
