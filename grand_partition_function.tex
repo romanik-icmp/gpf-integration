@@ -12,7 +12,7 @@ The quantity $\Xi_L$ denotes long-wave contributions to the GPF and is the objec
 \end{equation} 
 where $j_0=\sqrt{2}^{N_0 - 1},$ $N_0$ being determined in~\eqref{def:NB} below, $Q(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)$ and $\tilde{\mathfrak{M}_0}$ are explicitly given in Appendix~\ref{sec:app-a}.
 
-The quantity $\Xi_L^{(1)}$ stands for
+The quantity $\Xi_L^{(1)}$ in the approximation of the so-called $\rho^4$ model is given by
 \begin{eqnarray}
 	\label{Xi_L_1}
 	\Xi_L^{(1)} &=& 
@@ -34,21 +34,21 @@ Thus the number of variables to be integrated over is equal to $N_0$
 \begin{equation*}
 	(d\rho)^{N_0} = {\rm d}\rho_0 \prod_{\vb k\atop k\le B_0}' {\rm d}\rho_{\vb k}^c {\rm d}\omega_{\vb k}^s
 \end{equation*}
-where $\rho_{\vb k}^c$ and $\rho_{\vb k}^s$ are the real and imaginary parts of the collective variable $\rho_{\vb k} = \rho_{\vb k}^c - {\rm i} \rho_{\vb k}^s$, respectively\footnote{Traditionally, the collective variables are denoted by $\rho_{\vb k}$, and the element of integration over CVs is denoted by $({\rm d} \rho)$, while the particle density is denoted by $\rho$. We hope that it is clear from the context when $\rho$ is understood as the number density, and when it is related to CVs}. The 'prime' sign over the product means that the wave-vector takes on values only form the upper semi-sphere, i.e. $k_z > 0$ and $\vb k \neq 0$.
+where $\rho_{\vb k}^c$ and $\rho_{\vb k}^s$ are the real and imaginary parts of the collective variable $\rho_{\vb k} = \rho_{\vb k}^c - {\rm i} \rho_{\vb k}^s$, respectively\footnote{Traditionally, the collective variables are denoted by $\rho_{\vb k}$, and the element of integration over CVs is denoted by $({\rm d} \rho)$, while the particle density is denoted by $\rho$. We hope that it is clear from the context when $\rho$ is understood as the number density, and when it is related to CVs}. The `prime' sign over the product means that the wave-vector takes on values only form the upper semi-sphere, i.e. $k_z > 0$ and $\abs{\vb k} \neq 0$.
 
 The following simplification is used for the Kronecker symbol in~\eqref{Xi_L_1}
 \begin{equation*}
-	\delta_{\vb k} = \frac{1}{V} \int (\rm{d} \vb r) \rm{e}^{-{\rm i} \vb k \vb r} = \frac{1}{N_0}\sum_{\vb l_0} {\rm e}^{-{\rm i} \vb k \vb l_0}.
+	\delta_{\vb k} = \frac{1}{V} \int \rm{e}^{-{\rm i} \vb k \vb r} \rm{d} \vb r = \frac{1}{N_0}\sum_{\vb l_0} {\rm e}^{-{\rm i} \vb k \vb l_0}.
 \end{equation*}
-The summation over $\vb l_0$ implies that $\vb l_0$ takes on $N_0$ values in real space corresponding to the $N_0$ values of wave vector $\vb k$ in the sphere of radius $B_0$ in the reciprocal space. This is called a spherical approximation for the first Brillouin zone. It is assumed that a proper correspondence can be established between a spherical Brillouin zone and a structure in real space by analogy to how simple cubic lattice corresponds to its Brillouin zone in the Ising-model problem [REFERENCE NEEDED]. 
+The summation over $\vb l_0$ implies that $\vb l_0$ takes on $N_0$ values in real space corresponding to the $N_0$ values of wave vector $\vb k$ in a sphere of radius $B_0$ in the reciprocal space. This is called a spherical approximation for the first Brillouin zone. It is assumed that a proper correspondence can be established between a spherical Brillouin zone and a structure in real space by analogy to how simple cubic lattice corresponds to its Brillouin zone in the Ising-model problem~\cite{Yukh2001book}. 
 
-In what follows we also will understand that $\vb l \in \Lambda_0$ corresponds to vectors $\vb k$ such that $k \leq B_0$, $\vb l \in \Lambda_1$ to $k \leq B_1$, and in general $\vb l \in \Lambda_n$ to $k \leq B_n$. Here $B_n = B/s^n$ and $s$ is the renormalization parameter to be introduced later.
+In what follows we also will understand that $\vb l \in \Lambda_0$ corresponds to vectors $\vb k$ such that $k \leq B_0$, $\vb l \in \Lambda_1$ to $k \leq B_1$, and in general $\vb l \in \Lambda_n$ to $k \leq B_n$. Here $B_n = B_0/s^n$ and $s$ is the renormalization parameter to be introduced later.
 
-The expression~\eqref{Xi_L_1} formally coincides with the expression for the partition function functional of the 3-dimentional Ising-like model in an external field [REFERENCE NEEDED]. 
+The expression~\eqref{Xi_L_1} formally coincides with the expression for the partition function functional of the 3-dimentional Ising-like model in an external field~\cite{Mpk2012book,MpkRoma2012}. 
 
-A necessary condition for this functional to give rise to a critical-point solution is $\mu^* = 0$, which leads to a line of critical temperature dependence on the chemical potential $\mu$ (at some value of the reference system particle density $\rho_c$)~\cite{RomaJPS2024}.
+A necessary condition for this functional to give rise to a critical-point solution is $\mu^* = 0$, which leads to a line of critical temperature dependence on the chemical potential $\mu$ (at some value of the RS particle density $\rho_c$)~\cite{RomaJPS2024}.
 
-We are going to integrate~\eqref{Xi_L_1} following the method developed for calculation of the partition function of the 3-dimentional Ising-like models \cite{MpkCMP2005,Yukh1989riv}. The main idea is to divide the interval $[0, B_0]$ into sub-intervals $(B_1, B_0]$, $(B_2, B_1]$, $(B_3, B_2]$ and so on, where $B_1 = B_0/s$, $B_2 = B_1/s = B_2/s^2$, or in general $B_n = B_0/s^n$, $s$ being the renormalization group parameter, $s > 1.$ Variables $\rho_{\vb k}$ with $B_1 < k \leq B_0$ are said to belong to the first layer, $\rho_{\vb k}$ with $B_2 < k \leq B_1$ to the second one, and continuing in the same manner, $\rho_{\vb k}$ with $B_n < k \leq B_{n-1}$ to the $n$-th layer.
+We are going to integrate~\eqref{Xi_L_1} following the method developed for calculation of the partition function of the 3-dimentional Ising-like models \cite{Yukh1989riv,Yukh2001book,MpkCMP2005}. The main idea is to divide the interval $[0, B_0]$ into sub-intervals $(B_1, B_0]$, $(B_2, B_1]$, $(B_3, B_2]$ and so on, where $B_1 = B_0/s$, $B_2 = B_1/s = B_2/s^2$, or in general $B_n = B_0/s^n$, $s$ being the renormalization group parameter, $s > 1.$ Variables $\rho_{\vb k}$ with $B_1 < k \leq B_0$ are said to belong to the first layer, $\rho_{\vb k}$ with $B_2 < k \leq B_1$ to the second one, and continuing in the same manner, $\rho_{\vb k}$ with $B_n < k \leq B_{n-1}$ to the $n$-th layer.
 The integration is performed iteratively, starting with integration over the collective variables of the first layer, then over the second one and so on.
 The number of variables to be left after the integration over the first layer is $N_1 = N_0 / s^3 = (B_0^3 V)/(2\pi^2 s^3)$. Thus the number of variables integrated out in the first iteration is $N_0 - N_1 = N_0(1-s^{-3})$.
 
@@ -63,9 +63,11 @@ To factorize the integrals the Fourier transform $\hat{\Phi}_{\vb k}$ of the lon
 	& & \hat{\Phi}_{B_n, B_{n-1}}, \quad B_n < k \leq B_{n-1}.
 \end{eqnarray*}
 The particulars of this averaging are not so important to outline the method of layer-by-layer integration. Thus we will return to them later when we present some numerical and graphical results.
+Note the we postpone the specifying of the interaction potential details to a later stage of the paper. For now, we just restrict it to a form that it can be (quite freerely) separated into short-range repulsive and long-range attractive counterparts.
+The properties of the short-range one are assumed to be known. One of the required properties for the long-range part is that it possesses a Fourier transform, and the long-wave limit ($\abs{\vb k} = 0$) of it takes on a negative value.
 
 \subsection{Integration over the first layer}
-Now let us explicitly integrate over the variables of the first layer.
+Now let us explicitly integrate over the variables of the first layer. During the course of integration we closely follow steps described in~\cite{MpkCMP2005}.
 
 The second term in the exponent of~\eqref{Xi_L_1} is rewritten as
 \begin{equation*}
@@ -366,13 +368,17 @@ The other quantities are
 	x_n = d_2^{(n)}(B_{n+1}, B_n) \left(\frac{3}{a_4^{(n)}}\right)^{1/2},
 \end{equation*}
 
+\begin{equation}
+	Q_n = Q_{f_n}^{N_n} Q_{\varphi_{n}}^{N_{n+1}};
+\end{equation}
+
 \begin{equation*}
 	Q_{f_n} = \sqrt{2\pi}\left(\frac{3}{a_4^{(n)}}\right)^{1/4} {\rm e}^{x_n^2/4} U(0,x_n);
 \end{equation*}
 \begin{equation*}
 	Q_{\varphi_n} = (2\pi)^{-1/2} s^{3/4} \left(\frac{a_4^{(n)}}{\varphi(x_n)}\right)^{1/4} {\rm e}^{y_n^2/4} U(0,y_n).
 \end{equation*}
-The concise form of the recurrence relations is as follows:
+A concise form of the recurrence relations is as follows:
 \begin{eqnarray}
 	a_2^{(n)} & = & d_2^{(n-1)}(B_n, B_{n-1}) N(x_{n-1}) - \frac{\beta\hat{\Phi}_{B_n, B_{n-1}}}{V};
 	\\
@@ -452,9 +458,9 @@ where
 	\quad 
 	\bar{u} = \frac{3}{(x^*)^2} \left(\frac{1 - s^{-2}}{N(x^*) - s^{-2}}\right)^2 \bar{q}^2.
 \end{equation*}
-We consider potentials with $\hat{\Phi}_0 < 0$, thus we can write $\hat{\Phi}_0 = -\abs{\hat{\Phi}_0}$
+We consider potentials with $\hat{\Phi}_0 < 0$, thus we write $\hat{\Phi}_0 = -\abs{\hat{\Phi}_0}$
 
-Let's use the linear approximation for the recurrence relations~\ref{RR_final}
+Let us use the linear approximation for the recurrence relations~\eqref{RR_final}
 \begin{equation}
 	\label{eq:linear_rr}
 	\left(
@@ -471,7 +477,7 @@ Let's use the linear approximation for the recurrence relations~\ref{RR_final}
 		\end{array}
 	\right)
 \end{equation}
-Let us calculate the elements of the linearized renormalization group transformation matrix $R$.
+The elements of the linearized renormalization group transformation matrix $R$ are calculated by the formulas
 \begin{equation*}
 	R_{11} = \left(\frac{\partial r_{n+1}}{\partial r_n}\right)^* = s^2 \left[N(x^*) + x^* \left(\frac{\partial N(x)}{\partial x} \right)_{x=x^*} \right],
 \end{equation*}
@@ -491,7 +497,7 @@ Here the star refers to the fixed-point values, and
 \begin{equation*}
 	R_{21}^{(0)} = s\sqrt{3} \left(\frac{\partial E(x)}{\partial x}\right)_{x=x^*}.
 \end{equation*}
-Note that that following results were used for calculation the matrix elements:
+Note that the following relations were used for calculating the matrix elements:
 \begin{equation*}
 	\left(\frac{\partial x_n}{\partial r_n}\right)^* = \frac{\sqrt{3}}{\sqrt{u^*}}, 
 	\quad
@@ -573,7 +579,7 @@ In explicit form, $c_1$ is written as
 		a_2 - (1 - \bar{r} - R^{(0)}\sqrt{\bar{u}})\frac{\beta \abs{\hat{\Phi}_0}}{V} + \frac{a_4 R^{(0)}}{\sqrt{\bar{u}}} \left(\frac{\beta \abs{\hat{\Phi}_0}}{V}\right)^{-1}
 	\right) D^{-1}
 \end{equation*}
-and one gets the equation for the critical temperature
+and one arrives at the equation for the critical temperature
 \begin{equation}
 	\left(1 - \bar{r} - R^{(0)}\sqrt{\bar{u}} \right) \left(\frac{\beta \abs{\hat{\Phi}_0}}{V}\right)^{2} - a_2  \frac{\beta \abs{\hat{\Phi}_0}}{V} + \frac{a_4 R^{(0)}}{\sqrt{\bar{u}}} = 0,
 \end{equation}
