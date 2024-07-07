@@ -19,7 +19,7 @@ The quantity $\Xi_L^{(1)}$ in the approximation of the so-called $\rho^4$ model 
 	\int \exp\left(
 	\mu^* \rho_0 - \frac{1}{2} \sum_{\substack{\vb k \\ k \leq B_0}} d_2(k) \rho_{\vb k} \rho_{-\vb k} 
 	\right.\\
-	&& -\left. \frac{a_4}{4! N_0} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_0}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4} \right) ({\rm d} \rho)^{N_0}
+	& - & \left. \frac{a_4}{4! N_0} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_0}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4} \right) ({\rm d} \rho)^{N_0}
 	\nonumber.
 \end{eqnarray}
 Here $d_2(k) = a_2 + \frac{\beta\hat{\Phi}_{\vb k}}{V}$, $\beta$ being the inverse temperature, $V$ the volume, $\hat{\Phi}_{\vb k}$ the Fourier component of the long-range part of the interaction potential.
@@ -32,7 +32,7 @@ The wave vector $\vb k$ takes on $N_0$ values in a sphere of radius $B_0$, so th
 \end{equation}
 Thus the number of variables to be integrated over is equal to $N_0$
 \begin{equation*}
-	(d\rho)^{N_0} = {\rm d}\rho_0 \prod_{\vb k\atop k\le B_0}' {\rm d}\rho_{\vb k}^c {\rm d}\omega_{\vb k}^s
+	(d\rho)^{N_0} = {\rm d}\rho_0 \prod_{\substack{\vb k \\ k\le B_0}}' {\rm d}\rho_{\vb k}^c {\rm d}\omega_{\vb k}^s
 \end{equation*}
 where $\rho_{\vb k}^c$ and $\rho_{\vb k}^s$ are the real and imaginary parts of the collective variable $\rho_{\vb k} = \rho_{\vb k}^c - {\rm i} \rho_{\vb k}^s$, respectively\footnote{Traditionally, the collective variables are denoted by $\rho_{\vb k}$, and the element of integration over CVs is denoted by $({\rm d} \rho)$, while the particle density is denoted by $\rho$. We hope that it is clear from the context when $\rho$ is understood as the number density, and when it is related to CVs}. The `prime' sign over the product means that the wave-vector takes on values only form the upper semi-sphere, i.e. $k_z > 0$ and $\abs{\vb k} \neq 0$.
 
@@ -70,46 +70,59 @@ The properties of the short-range one are assumed to be known. One of the requir
 Now let us explicitly integrate over the variables of the first layer. During the course of integration we closely follow steps described in~\cite{MpkCMP2005}.
 
 The second term in the exponent of~\eqref{Xi_L_1} is rewritten as
-\begin{equation*}
+\begin{eqnarray*}
 	\sum_{\substack{\vb k, k \leq B_0}} d_2(k) \rho_{\vb k} \rho_{-\vb k} 
-	= 
+	& = &  
 	\sum_{\substack{\vb k, k \leq B_1}} d_2(k) \rho_{\vb k} \rho_{-\vb k}
-	+
+	\\
+	& + &
 	\sum_{\substack{\vb k, B_1 < k \leq B_0}} d_2(B_1, B_0) \rho_{\vb k} \rho_{-\vb k}
-\end{equation*}
+\end{eqnarray*}
 where $d_2(B_1, B_0) = a_2 + \beta\hat{\Phi}_{B_1, B_0}/V$.
 The expression for $\Xi_L^{(1)}$ is now recast
 \begin{eqnarray*}
 	\Xi_L^{(1)} &=& 
 	\int \exp\left(
 	\mu^* \rho_0 - \frac{1}{2} \sum_{\substack{\vb k \\ k \leq B_1}} d_2(k) \rho_{\vb k} \rho_{-\vb k}
-	- \frac{d_2(B_1, B_0)}{2} \sum_{\substack{\vb k \\ B_1 < k \leq B_0}} \rho_{\vb k} \rho_{-\vb k}  
 	\right.
 	\\
-	&& -\left. \frac{a_4}{4! N_0} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_0}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4} \right) 
-	({\rm d} \rho)^{N_1} ({\rm d} \rho)^{N_0 - N_1}
-	\nonumber.
+	& - & 
+	\left.
+	\frac{d_2(B_1, B_0)}{2} \sum_{\substack{\vb k \\ B_1 < k \leq B_0}} \rho_{\vb k} \rho_{-\vb k}  
+	\right.
+	\\
+	& - & \left. \frac{a_4}{4! N_0} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_0}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4} \right)
+	\\ 
+	& \times & ({\rm d} \rho)^{N_1} ({\rm d} \rho)^{N_0 - N_1}.
 \end{eqnarray*}
 To distinguish the variables to be integrated over in the first iteration, let us denote them by $\eta_{\vb k}$, i.e. $\rho_{\vb k} \rightarrow \eta_{\vb k}$ for $B_1 < k \leq B_0$. Let us also extend the number of variables $\eta_{\vb k}$ with the help of $\delta-$functions:
-\begin{equation*}
+\begin{eqnarray*}
 	\prod_{\vb{k}, 0\leq k \leq B_1}\delta(\eta_{\vb k}-\rho_{\vb k})
-	= \int ({\rm d}\nu)^{N_1}\exp \left(2\pi{\rm i}\sum_{k\leq B_1}\nu_{\vb k}(\eta_{\vb k}-\rho_{\vb k})\right)
-\end{equation*}
+	& = &  \int ({\rm d}\nu)^{N_1} \\
+	&\times& \exp (2\pi{\rm i}\sum_{k\leq B_1}\nu_{\vb k}(\eta_{\vb k}-\rho_{\vb k}))
+\end{eqnarray*}
 so that $\Xi_L^{(1)}$ is rewritten as 
 \begin{eqnarray*}
 	\Xi_L^{(1)} &=& 
 	\int ({\rm d} \rho)^{N_1} \exp 
-	\left(
-		\mu^* \rho_0 - \frac{1}{2} \sum_{\substack{\vb k \\ k \leq B_1}} (d_2(k) - d_2(B_1, B_0) ) \rho_{\vb k} \rho_{-\vb k}
+	\Bigl(
+		\mu^* \rho_0 
+		%\right.
+	\\
+	& - & 
+	\left.\frac{1}{2} \sum_{\substack{\vb k \\ k \leq B_1}} (d_2(k) - d_2(B_1, B_0) ) \rho_{\vb k} \rho_{-\vb k}
 	\right)
 	\\
-	&&  \int ({\rm d}\nu)^{N_1} \exp \left(-2\pi{\rm i}\sum_{\vb k, k \leq B_1} \nu_{\vb k}\rho_{\vb k}\right)
+	&\times&  \int ({\rm d}\nu)^{N_1} \exp \left(-2\pi{\rm i}\sum_{\vb k, k \leq B_1} \nu_{\vb k}\rho_{\vb k}\right)
 	I(\nu_{\vb k}).
 \end{eqnarray*}
 Here the notation $I(\nu_{\vb k})$ stands for the integral over $\eta_{\vb k}$
 \begin{eqnarray*}
 	I(\nu_{\vb k}) & = & \int ({\rm d} \eta)^{N_0} \exp
-	\left( 2\pi{\rm i} \sum_{\vb k, k \leq B_0} \bar{\nu}_{\vb k} \eta_{\vb k} - \frac{d_2(B_1, B_0)}{2} \sum_{\vb k, k \leq B_0} \eta_{\vb k} \eta_{-\vb k}
+	\left( 2\pi{\rm i} \sum_{\vb k, k \leq B_0} \bar{\nu}_{\vb k} \eta_{\vb k} 
+	\right.
+	\\
+	&-& \left. \frac{d_2(B_1, B_0)}{2} \sum_{\vb k, k \leq B_0} \eta_{\vb k} \eta_{-\vb k}
 	\right.
 	\\
 	&& - \left. \frac{a_4}{4! N_0} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_0}} \eta_{\vb k_1} \dotsc \eta_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4} \right)
@@ -126,23 +139,27 @@ where the quantity $\bar{\nu}_{\vb k}$ is introduced as
 by analogy with the method described in~\cite{MpkCMP2005}.
 
 Now this integral can be factorized in the so-called site variables
-\begin{equation*}
-	\tilde{\eta}_{\vb l} = \frac{1}{\sqrt{N_0}}\sum_{\vb k, k \leq B_0}\eta_{\vb k}{\rm e}^{{\rm i}{\vb k}{\vb l}}
-	, \qquad 
-	\tilde{\bar{\nu}}_{\vb l}=\frac{1}{\sqrt{N_0}}\sum_{\vb k, k \leq B_0}\bar{\nu}_{\vb k}{\rm e}^{-{\rm i}{\vb k}{\vb l}}.
-\end{equation*}
-For some useful relations for site variables, see Appendix~B.
+\begin{eqnarray*}
+	\tilde{\eta}_{\vb l} & = & \frac{1}{\sqrt{N_0}}\sum_{\vb k, k \leq B_0}\eta_{\vb k}{\rm e}^{{\rm i}{\vb k}{\vb l}},
+	\\
+	\tilde{\bar{\nu}}_{\vb l} & = &\frac{1}{\sqrt{N_0}}\sum_{\vb k, k \leq B_0}\bar{\nu}_{\vb k}{\rm e}^{-{\rm i}{\vb k}{\vb l}}.
+\end{eqnarray*}
+For some useful relations for site variables, see Appendix~\ref{sec:app-b}.
 Now the integral takes on the form
 \begin{eqnarray*}
 	I(\nu_{\vb k}) & = & j_0^{-1} \prod_{\vb l \in \Lambda_0} \int_{-\infty}^{\infty} {\rm d} \tilde{\eta_{\vb l}}
-	\exp(2\pi{\rm i} \tilde{\bar{\nu}}_{\vb l} \tilde{\eta_{\vb l}} -\frac{d_2(B_1, B_0)}{2} \tilde{\eta_{\vb l}}^2 - \frac{a_4}{4!}\tilde{\eta_{\vb l}}^4 )
+	\exp\Bigl( 2\pi{\rm i} \tilde{\bar{\nu}}_{\vb l} \tilde{\eta_{\vb l}} 
+	%\right.
+	\\
+	&& 
+	\left. -\frac{d_2(B_1, B_0)}{2} \tilde{\eta_{\vb l}}^2 - \frac{a_4}{4!}\tilde{\eta_{\vb l}}^4 \right)
 	\\
 	& = & j_0^{-1} [Q_{f_0}]^{N_0} \prod_{\vb l \in \Lambda_0} \exp(-\sum_{n \geq 1} \frac{S_{2n}}{(2n)!} \tilde{\bar{\nu}}_{\vb l}^{2n}).
 \end{eqnarray*}
 Restricting the resulting exponent to the $4$-th power in $\tilde{\bar{\nu}}_{\vb l}$ one gets
 \begin{eqnarray*}
 	I(\nu_{\vb k}) & = & j_0^{-1} [Q_{f_0}]^{N_0} \prod_{\vb l \in \Lambda_0}
-	\exp(-\frac{S_2}{2!}\tilde{\bar{\nu}}_{\vb l}^2 - \frac{S_4}{4!}\tilde{\bar{\nu}}_{\vb l}^4 )
+	\exp(-\frac{S_2}{2!}\tilde{\bar{\nu}}_{\vb l}^2 - \frac{S_4}{4!}\tilde{\bar{\nu}}_{\vb l}^4 ).
 \end{eqnarray*}
 In terms of $\nu_{\vb k}$ the result for $I(\nu_{\vb k})$ is expressed as follows:
 \begin{eqnarray*}
@@ -150,8 +167,8 @@ In terms of $\nu_{\vb k}$ the result for $I(\nu_{\vb k})$ is expressed as follow
 	\exp \left(- \frac{S_2}{2!} \sum_{\vb k, k \leq B_1} \nu_{\vb k} \nu_{-\vb k}
 	\right.
 	\\
-	& & \left.
-	 - \frac{S_4}{4! N_0} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}} \nu_{\vb k_1} \dotsc \nu_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
+	& - & \left.
+	 \frac{S_4}{4! N_0} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}} \nu_{\vb k_1} \dotsc \nu_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
 	 \right)
 	 .
 \end{eqnarray*}
@@ -170,26 +187,33 @@ The next step is to integrate over $\nu_{\vb k}$ the following integral
 \begin{eqnarray*}
 	I_2(\rho_{\vb k}) & = & \int ({\rm d} \nu)^{N_1} 
 	\exp 
-	\left(-2\pi{\rm i} \sum_{\vb k, k \leq B_1} \nu_{\vb k}\rho_{\vb k} 
-		-\frac{S_2}{2!} \sum_{\vb k, k \leq B_1} \nu_{\vb k}\nu_{-\vb k}
+	\left(-2\pi{\rm i} \sum_{\vb k, k \leq B_1} \nu_{\vb k}\rho_{\vb k}
 	\right.
 	\\
-	& &
+	&-&
+	\left.
+	 \frac{S_2}{2!} \sum_{\vb k, k \leq B_1} \nu_{\vb k}\nu_{-\vb k}
+	\right.
+	\\
+	& - &
 	\left. 
-		- \frac{S_4 s^{-3}}{4! N_1} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}} \nu_{\vb k_1} \dotsc \nu_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
+		\frac{S_4 s^{-3}}{4! N_1} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}} \nu_{\vb k_1} \dotsc \nu_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
 	\right)
 	\\
 	& = &
 	j_1 \prod_{\vb l \in \Lambda_1} \int {\rm d} \tilde{\nu}_{\vb l} 
-	\exp(-2\pi {\rm i} \tilde{\nu}_{\vb l} \tilde{\rho}_{\vb l} - \frac{S_2}{2!}\tilde{\nu}_{\vb l}^2
+	\exp(-2\pi {\rm i} \tilde{\nu}_{\vb l} \tilde{\rho}_{\vb l})
+	\\
+	&& \times \exp(- \frac{S_2}{2!}\tilde{\nu}_{\vb l}^2
 	- \frac{S_4}{4! s^3} \tilde{\nu}_{\vb l}^4  )
 \end{eqnarray*}
 where $j_1 = \sqrt{2}^{N_1 - 1}$, and this time
-\begin{equation*}
-	\tilde{\rho}_{\vb l} = \frac{1}{\sqrt{N_1}}\sum_{\vb k, k \leq B_1}\rho_{\vb k}{\rm e}^{{\rm i}{\vb k}{\vb l}}
-	, \qquad 
-	\tilde{\nu}_{\vb l}=\frac{1}{\sqrt{N_1}}\sum_{\vb k, k \leq B_1}\nu_{\vb k}{\rm e}^{-{\rm i}{\vb k}{\vb l}}.
-\end{equation*}
+\begin{eqnarray*}
+	\tilde{\rho}_{\vb l} & = &  \frac{1}{\sqrt{N_1}}\sum_{\vb k, k \leq B_1}\rho_{\vb k}{\rm e}^{{\rm i}{\vb k}{\vb l}}
+	,
+	\\
+	\tilde{\nu}_{\vb l} & = & \frac{1}{\sqrt{N_1}}\sum_{\vb k, k \leq B_1}\nu_{\vb k}{\rm e}^{-{\rm i}{\vb k}{\vb l}}.
+\end{eqnarray*}
 The result of integration is
 \begin{equation*}
 	I_2(\rho_{\vb k}) = j_1 [Q_{\varphi_0}]^{N_1} \prod_{\vb l \in \Lambda_1} 
@@ -201,8 +225,11 @@ In the "$\rho^4$" approximation this takes the form
 	\exp( - \frac{R_2}{2!} \tilde{\rho}_{\vb l}^2 - \frac{R_4}{4!} \tilde{\rho}_{\vb l}^4)
 	\\
 	& = & j_1 [Q_{\varphi_0}]^{N_1} 
-	\exp( -\frac{R_2}{2!} \sum_{\vb k, k \leq B_1} \rho_{\vb k} \rho_{-\vb k} - \frac{R_4}{4!N_1} 
-	\sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}).
+	\exp\left( -\frac{R_2}{2!} \sum_{\vb k, k \leq B_1} \rho_{\vb k} \rho_{-\vb k} 
+	\right.
+	\\
+	&& - \left. \frac{R_4}{4!N_1} 
+	\sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}\right).
 \end{eqnarray*}
 Here
 \begin{equation*}
@@ -215,37 +242,40 @@ Here
 	y = s^{3/2} U(x) \sqrt{\frac{3}{\varphi(x)}}.
 \end{equation*}
 This time the approximation for the Kronecker symbol is 
-$$
+\begin{equation*}
 	\delta_{\vb k} \approx \frac{1}{N_1} \sum_{\vb l \in \Lambda_1} \exp(-{\rm i} \vb{k} \vb{l}).
-$$
+\end{equation*}
 
 Finally, as a result of integration over the first layer, we get for $\Xi_L^{(1)}$
-\begin{eqnarray}
-	\Xi_L^{(1)} & = & j_0^{-1}j_1 [Q_{f_0}]^{N_0} [Q_{\varphi_0}]^{N_1} 
+\begin{eqnarray*}
+	&& \Xi_L^{(1)} = j_0^{-1}j_1 [Q_{f_0}]^{N_0} [Q_{\varphi_0}]^{N_1} 
 	\\
 	&& \times 
 	\int ({\rm d} \rho)^{N_1} \exp
 	\left(
-		\mu^*\rho_0 - \frac{1}{2} \sum_{\vb k, k \leq B_1} d_2^{(1)}(k) \rho_{\vb k} \rho_{-\vb k}
+	\mu^*\rho_0 - \frac{1}{2} \sum_{\vb k, k \leq B_1} d_2^{(1)}(k) \rho_{\vb k} \rho_{-\vb k}
 	\right.
 	\nonumber \\
-	&& 
+	&& -  
 	\left.
-		- \frac{a_4^{(1)}}{4!N_1} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}}
-		\rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
+	\frac{a_4^{(1)}}{4!N_1} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_1}}
+	\rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
 	\right)
 	\nonumber
-\end{eqnarray}
+\end{eqnarray*}
 where
 \begin{equation}
 	\label{RR_1_0_d}
 	d_2^{(1)}(k) = a_2^{(1)} + \beta\hat{\Phi}_{\vb k} / V;
 \end{equation}
-\begin{equation}
+\begin{eqnarray}
 	\label{RR_1_0_a2}
-	a_2^{(1)} = R_2 - \frac{\beta\hat{\Phi}_{B_1, B_0}}{V} = s^{3/2} \left(\frac{a_4}{\varphi(x)}\right)^{1/2} U(y)
+	a_2^{(1)} & = & R_2 - \frac{\beta\hat{\Phi}_{B_1, B_0}}{V} 
+	\\
+	& = & s^{3/2} \left(\frac{a_4}{\varphi(x)}\right)^{1/2} U(y)
 	- \frac{\beta\hat{\Phi}_{B_1, B_0}}{V};
-\end{equation}
+	\nonumber
+\end{eqnarray}
 \begin{equation}
 	\label{RR_1_0_a4}
 	a_4^{(1)} = R_4 = s^3 a_4 \frac{\varphi(y)}{\varphi(x)}.
@@ -265,8 +295,8 @@ Here the following quantities are introduced
 
 \subsection{Integration over the second layer}
 Following the outlined procedure, one can perform the integration over the second layer, with $B_2 < k \le B_1.$ As a result of such integration, the quantity $\Xi_L^{(1)}$ takes on the following expression:
-\begin{eqnarray}
-	\Xi_L^{(1)} & = & j_0^{-1}j_2 [Q_{f_0}]^{N_0} [Q_{\varphi_0}]^{N_1} [Q_{f_1}]^{N_1} [Q_{\varphi_1}]^{N_2} 
+\begin{eqnarray*}
+	&&\Xi_L^{(1)} = j_0^{-1}j_2 [Q_{f_0}]^{N_0} [Q_{\varphi_0}]^{N_1} [Q_{f_1}]^{N_1} [Q_{\varphi_1}]^{N_2} 
 	\\
 	&& \times 
 	\int ({\rm d} \rho)^{N_2} \exp
@@ -274,45 +304,46 @@ Following the outlined procedure, one can perform the integration over the secon
 	\mu^*\rho_0 - \frac{1}{2} \sum_{\vb k, k \leq B_2} d_2^{(2)}(k) \rho_{\vb k} \rho_{-\vb k}
 	\right.
 	\nonumber \\
-	&& 
+	&& - 
 	\left.
-	- \frac{a_4^{(2)}}{4!N_2} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_2}}
+	\frac{a_4^{(2)}}{4!N_2} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_2}}
 	\rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
 	\right)
 	\nonumber ,
-\end{eqnarray}
+\end{eqnarray*}
 where $j_2 = \sqrt{2}^{N_2 - 1},$ and
 \begin{equation}
 	\label{RR_2_1_d}
 	d_2^{(2)}(k) = a_2^{(2)} + \beta\hat{\Phi}_{\vb k} / V;
 \end{equation}
-\begin{equation}
+\begin{eqnarray}
 	\label{RR_2_1_a2}
-	a_2^{(2)} = R_2^{(1)} - \frac{\beta\hat{\Phi}_{B_2, B_1}}{V} = s^{3/2} \left(\frac{a_4^{(1)}}{\varphi(x_1)}\right)^{1/2} U(y_1)
+	a_2^{(2)} & = & R_2^{(1)} - \frac{\beta\hat{\Phi}_{B_2, B_1}}{V} 
+	\\
+	& = & s^{3/2} \left(\frac{a_4^{(1)}}{\varphi(x_1)}\right)^{1/2} U(y_1)
 	- \frac{\beta\hat{\Phi}_{B_2, B_1}}{V};
-\end{equation}
+	\nonumber
+\end{eqnarray}
 \begin{equation}
 	\label{RR_2_1_a4}
 	a_4^{(2)} = R_4^{(1)} = s^3 a_4^{(1)} \frac{\varphi(y_1)}{\varphi(x_1)}.
 \end{equation}
 The other quantities are
-\begin{equation*}
-	R_2^{(1)} = s^{3/2} \left(\frac{a_4^{(1)}}{\varphi(x_1)}\right)^{1/2} U(y_1); 
-	\quad 
-	R_4^{(1)} = s^3 a_4^{(1)} \frac{\varphi(y_1)}{\varphi(x_1)};
-\end{equation*}
-\begin{equation*}
-	y_1 = s^{3/2} U(x_1) \left(\frac{3}{\varphi(x_1)}\right)^{1/2};
-	\quad
-	x_1 = d_2^{(1)}(B_2, B_1) \left(\frac{3}{a_4^{(1)}}\right)^{1/2}.
-\end{equation*}
-
-\begin{equation*}
-	Q_{f_1} = \sqrt{2\pi}\left(\frac{3}{a_4^{(1)}}\right)^{1/4} {\rm e}^{x_1^2/4} U(0,x_1);
-\end{equation*}
-\begin{equation*}
-	Q_{\varphi_1} = (2\pi)^{-1/2} s^{3/4} \left(\frac{a_4^{(1)}}{\varphi(x_1)}\right)^{1/4} {\rm e}^{y_1^2/4} U(0,y_1).
-\end{equation*}
+\begin{eqnarray*}
+	R_2^{(1)} & = & s^{3/2} \left(\frac{a_4^{(1)}}{\varphi(x_1)}\right)^{1/2} U(y_1); 
+	\\
+	R_4^{(1)} & = & s^3 a_4^{(1)} \frac{\varphi(y_1)}{\varphi(x_1)};
+\end{eqnarray*}
+\begin{eqnarray*}
+	y_1 & = & s^{3/2} U(x_1) \left(\frac{3}{\varphi(x_1)}\right)^{1/2};
+	\\
+	x_1 & = & d_2^{(1)}(B_2, B_1) \left(\frac{3}{a_4^{(1)}}\right)^{1/2}.
+\end{eqnarray*}
+\begin{eqnarray*}
+	Q_{f_1} & = & \sqrt{2\pi}\left(\frac{3}{a_4^{(1)}}\right)^{1/4} {\rm e}^{x_1^2/4} U(0,x_1);
+\\
+	Q_{\varphi_1} & = & (2\pi)^{-1/2} s^{3/4} \left(\frac{a_4^{(1)}}{\varphi(x_1)}\right)^{1/4} {\rm e}^{y_1^2/4} U(0,y_1).
+\end{eqnarray*}
 
 The recurrence relations~\eqref{RR_2_1_d}~-~\eqref{RR_2_1_a4} link the coefficients of an effective Hamiltonian before and after the integration over the second layer, expressing coefficients $a_2^{(2)}$ and $a_4^{(2)}$ via $a_2^{(1)}$ and $a_4^{(1)}$. They are analogous to Eqs.~\eqref{RR_1_0_d}~-~\eqref{RR_1_0_a4}. Written in a concise form analogous to~Eqs.~\eqref{RR_1_0_a2_short} and~\eqref{RR_1_0_a4_short}, they are
 \begin{eqnarray}
@@ -325,68 +356,66 @@ The recurrence relations~\eqref{RR_2_1_d}~-~\eqref{RR_2_1_a4} link the coefficie
 Having noticed the pattern while integration over the first two layers, we are now ready to generalize the result for an arbitrary number of layers.
 
 \begin{eqnarray}
-	\Xi_L^{(1)} & = & j_0^{-1}j_n Q_0 Q_1 \dotsc Q_{n-1} 
+	&&\Xi_L^{(1)} = j_0^{-1}j_n Q_0 Q_1 \dotsc Q_{n-1} 
 	\\
-	&& \times 
+	&&\times 
 	\int ({\rm d} \rho)^{N_n} \exp
 	\left(
 	\mu^*\rho_0 - \frac{1}{2} \sum_{\vb k, k \leq B_n} d_2^{(n)}(k) \rho_{\vb k} \rho_{-\vb k}
 	\right.
 	\nonumber \\
-	&& 
+	&&- 
 	\left.
-	- \frac{a_4^{(n)}}{4!N_n} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_n}}
+	\frac{a_4^{(n)}}{4!N_n} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B_n}}
 	\rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4}
 	\right)
 	\nonumber ,
 \end{eqnarray}
 where $j_n = \sqrt{2}^{N_n - 1},$ and
-\begin{equation}
-	\label{RR_n_d}
-	d_2^{(n)}(k) = a_2^{(n)} + \beta\hat{\Phi}_{\vb k} / V;
-\end{equation}
-\begin{equation}
-	\label{RR_n_a2}
-	a_2^{(n)} = R_2^{(n-1)} - \frac{\beta\hat{\Phi}_{B_n, B_{n-1}}}{V} = s^{3/2} \left(\frac{a_4^{(n-1)}}{\varphi(x_{n-1})}\right)^{1/2} U(y_{n-1})
-	- \frac{\beta\hat{\Phi}_{B_n, B_{n-1}}}{V};
-\end{equation}
-\begin{equation}
-	\label{RR_n_a4}
-	a_4^{(n)} = R_4^{(n-1)} = s^3 a_4^{(n-1)} \frac{\varphi(y_{n-1})}{\varphi(x_{n-1})}.
-\end{equation}
-The other quantities are
-\begin{equation*}
-	R_2^{(n)} = s^{3/2} \left(\frac{a_4^{(n)}}{\varphi(x_n)}\right)^{1/2} U(y_n);
-\end{equation*} 
-\begin{equation*}
-	R_4^{(n)} = s^3 a_4^{(n)} \frac{\varphi(y_n)}{\varphi(x_n)},
-\end{equation*}
-\begin{equation*}
-	y_n = s^{3/2} U(x_n) \left(\frac{3}{\varphi(x_n)}\right)^{1/2},
-\end{equation*}
-\begin{equation*}
-	x_n = d_2^{(n)}(B_{n+1}, B_n) \left(\frac{3}{a_4^{(n)}}\right)^{1/2},
-\end{equation*}
-
-\begin{equation}
-	Q_n = Q_{f_n}^{N_n} Q_{\varphi_{n}}^{N_{n+1}};
-\end{equation}
-
-\begin{equation*}
-	Q_{f_n} = \sqrt{2\pi}\left(\frac{3}{a_4^{(n)}}\right)^{1/4} {\rm e}^{x_n^2/4} U(0,x_n);
-\end{equation*}
-\begin{equation*}
-	Q_{\varphi_n} = (2\pi)^{-1/2} s^{3/4} \left(\frac{a_4^{(n)}}{\varphi(x_n)}\right)^{1/4} {\rm e}^{y_n^2/4} U(0,y_n).
-\end{equation*}
-A concise form of the recurrence relations is as follows:
 \begin{eqnarray}
+	\label{RR_n_d}
+	d_2^{(n)}(k) & = & a_2^{(n)} + \beta\hat{\Phi}_{\vb k} / V;
+\end{eqnarray}
+\begin{eqnarray}
+	\label{RR_n_a2}
+	a_2^{(n)} & = & R_2^{(n-1)} - \frac{\beta\hat{\Phi}_{B_n, B_{n-1}}}{V}
+	\\
+	& = &  s^{3/2} \left(\frac{a_4^{(n-1)}}{\varphi(x_{n-1})}\right)^{1/2} U(y_{n-1})
+	- \frac{\beta\hat{\Phi}_{B_n, B_{n-1}}}{V};
+	\nonumber
+\end{eqnarray}
+\begin{eqnarray}
+	\label{RR_n_a4}
+	a_4^{(n)} & = & R_4^{(n-1)} = s^3 a_4^{(n-1)} \frac{\varphi(y_{n-1})}{\varphi(x_{n-1})}.
+\end{eqnarray}
+The other quantities are
+\begin{eqnarray*}
+	R_2^{(n)} & = & s^{3/2} \left(\frac{a_4^{(n)}}{\varphi(x_n)}\right)^{1/2} U(y_n);
+\\
+	R_4^{(n)} & = & s^3 a_4^{(n)} \frac{\varphi(y_n)}{\varphi(x_n)},
+\end{eqnarray*}
+\begin{eqnarray*}
+	y_n & = & s^{3/2} U(x_n) \left(\frac{3}{\varphi(x_n)}\right)^{1/2},
+\\
+	x_n & = & d_2^{(n)}(B_{n+1}, B_n) \left(\frac{3}{a_4^{(n)}}\right)^{1/2}.
+\end{eqnarray*}
+
+\begin{eqnarray*}
+	Q_n & = & Q_{f_n}^{N_n} Q_{\varphi_{n}}^{N_{n+1}};
+\\
+	Q_{f_n} & = & \sqrt{2\pi}\left(\frac{3}{a_4^{(n)}}\right)^{1/4} {\rm e}^{x_n^2/4} U(0,x_n);
+\\
+	Q_{\varphi_n} & = & (2\pi)^{-1/2} s^{3/4} \left(\frac{a_4^{(n)}}{\varphi(x_n)}\right)^{1/4} {\rm e}^{y_n^2/4} U(0,y_n).
+\end{eqnarray*}
+A concise form of the recurrence relations is as follows:
+\begin{eqnarray*}
 	a_2^{(n)} & = & d_2^{(n-1)}(B_n, B_{n-1}) N(x_{n-1}) - \frac{\beta\hat{\Phi}_{B_n, B_{n-1}}}{V};
 	\\
 	a_4^{(n)} & = & s^{-3} a_4^{(n-1)} E(x_{n-1}).
-\end{eqnarray}
+\end{eqnarray*}
 
 \subsection{Recurrence relations}
-The general recurrence relations between coefficients of effective block-structure Hamiltonians have the form
+The general recurrence relations between coefficients of effective block-structure Hamiltonians can be written in the form
 \begin{eqnarray}
 	a_2^{(n+1)} & = & d_2^{(n)}(B_{n+1}, B_n) N(x_n) - \frac{\beta\hat{\Phi}_{B_{n+1}, B_n}}{V};
 	\\
@@ -394,12 +423,12 @@ The general recurrence relations between coefficients of effective block-structu
 \end{eqnarray}
 With the help of the following change of variables
 \begin{eqnarray*}
-	r_n & = & d_2^{(n)}(0)s^{2n}
+	r_n & = & d_2^{(n)}(0)s^{2n},
 	\nonumber \\
-	u_n & = & a_4^{(n)}s^{4n}
+	u_n & = & a_4^{(n)}s^{4n},
 	\nonumber
 \end{eqnarray*}
-The recurrence relations become
+the recurrence relations become
 \begin{eqnarray}
 	\label{RR_final}
 	r_{n+1} & = & s^2(r_n + q) N(x_n) - s^2 q;
@@ -408,12 +437,12 @@ The recurrence relations become
 \end{eqnarray}
 Here
 \begin{equation*}
-	q = s^{2n} \frac{\beta \hat{\Phi}_0}{V} \left(\frac{\hat{\Phi}_{B_{n+1}, B_n}}{\hat{\Phi}_0} - 1\right) = -\frac{\beta \hat{\Phi}_0}{V} \bar{q}
+	q = s^{2n} \frac{\beta \hat{\Phi}_0}{V} \left(\frac{\hat{\Phi}_{B_{n+1}, B_n}}{\hat{\Phi}_0} - 1\right) = -\frac{\beta \hat{\Phi}_0}{V} \bar{q},
 \end{equation*}
 where
-\begin{equation}
+\begin{equation*}
 	\bar{q} = -s^{2n} \left(\frac{\hat{\Phi}_{B_{n+1}, B_n}}{\hat{\Phi}_0} - 1\right).
-\end{equation}
+\end{equation*}
 The recurrence relations~\eqref{RR_final} possess a fixed point solution in the limit of $n \to \infty$. By definition, the fixed point solution means
 \begin{equation*}
 	r_{n+1} = r_n = r^*; \quad u_{n+1} = u_n = u^*
@@ -425,9 +454,9 @@ and hence
 	u^* & = & s u^* E(x^*).
 \end{eqnarray*}
 From the last equality it follows
-\begin{equation}
+\begin{equation*}
 	sE(x^*) = 1.
-\end{equation}
+\end{equation*}
 It is practical to chose $x^* = 0$, which is equivalent to $\lim_{n \to \infty}d_2^{(n)}(0) = d_2^* = 0$ at the fixed point, and gives $s = s^* = 3.5862$. We will use this value of $s$ to obtain particular numerical and graphical results. From the first recurrence relation it follows
 \begin{equation*}
 	r^* = -q\frac{N(x^*) - 1}{N(x^*) - s^{-2}}.
@@ -446,7 +475,7 @@ one finds the following expression for $u^*$
 	u^* = \frac{3 q^2}{(x^*)^2} \left[\frac{1 - s^{-2}}{N(x^*) - s^{-2}}\right]^2.
 \end{equation*}
 
-Taking into account the results of the following Subsection~\ref{sec:parab_pot}, we can write down the coordinates of the fixed point:
+We can write down the coordinates of the fixed point (for details on $\hat{\Phi}_0$, see Subsection~\ref{sec:parab_pot}):
 \begin{equation}
 	r^* = - {\frac{\beta \abs{\hat{\Phi}_0}}{V}} \bar{r}, 
 	\quad 
@@ -505,12 +534,16 @@ Note that the following relations were used for calculating the matrix elements:
 \end{equation*}
 
 The eigenvalues for the matrix $\cal{R}$ are
-\begin{equation*}
-	E_1 = \frac{1}{2} \left\{ (R_{11} + R_{22}) + \left[(R_{11} - R_{22})^2 + 4 R_{12}^{(0)}R_{21}^{(0)}\right]^{1/2}\right\},
-\end{equation*}
-\begin{equation*}
-	E_2 = \frac{1}{2} \left\{ (R_{11} + R_{22}) - \left[(R_{11} - R_{22})^2 + 4 R_{12}^{(0)}R_{21}^{(0)}\right]^{1/2}\right\}.
-\end{equation*}
+\begin{eqnarray*}
+	E_1 & = &  \frac{1}{2} \Bigl\{ (R_{11} + R_{22})
+	\\
+	&& + \left. \left[(R_{11} - R_{22})^2 + 4 R_{12}^{(0)}R_{21}^{(0)}\right]^{1/2}\right\},
+\end{eqnarray*}
+\begin{eqnarray*}
+	E_2 & = & \frac{1}{2} \Bigl\{ (R_{11} + R_{22}) 
+	\\
+	&& - \left. \left[(R_{11} - R_{22})^2 + 4 R_{12}^{(0)}R_{21}^{(0)}\right]^{1/2}\right\}.
+\end{eqnarray*}
 The eigenvectors for the matrix $\cal{R}$ are
 \begin{equation*}
 	W_1 = W_{11} \left(
@@ -531,23 +564,17 @@ The eigenvectors for the matrix $\cal{R}$ are
 \end{equation*}
 where constants $W_{11}$ and $W_{22}$ are yet to be determined, and quantities $R$ and $R_1$ are defined as
 \begin{eqnarray*}
-	R & = & \frac{R_{12}}{E_2 - R_{11}}, 
+	R & = & \frac{R_{12}}{E_2 - R_{11}} = (u^*)^{1/2}R^{(0)}, 
 	\\
-	R_1 & = & \frac{E_1 - R_{11}}{R_{12}},
-\end{eqnarray*}
-or more conveniently
-\begin{eqnarray*}
-	R & = & (u^*)^{1/2}R^{(0)}, 
-	\\
-	R_1 & = & (u^*)^{-1/2}R_1^{(0)},
+	R_1 & = & \frac{E_1 - R_{11}}{R_{12}} = (u^*)^{-1/2}R_1^{(0)},
 \end{eqnarray*}
 with
 \begin{eqnarray*}
-	R^{(0)} & = & \frac{R_{12}^{(0)}}{E_2 - R_{11}}
+	R^{(0)} & = & \frac{R_{12}^{(0)}}{E_2 - R_{11}},
 	\\
 	R_1^{(0)} & = & \frac{E_1 - R_{11}}{R_{12}^{(0)}}.
 \end{eqnarray*}
-Thus the solution to the linear recurrence relations~\eqref{eq:linear_rr} can be written as
+Thus, the solution to the linear recurrence relations~\eqref{eq:linear_rr} can be written as
 \begin{equation}
 	\left(
 	\begin{array}{ll}
@@ -564,7 +591,7 @@ where $c'_1$ and $c'_2$ are some constants. We arrive at the following equatinos
 	\nonumber \\
 	u_n & = & u^* + c_1 R_1 E_1^n + c_2 E_2^n,
 \end{eqnarray}
-where $c_1 = W_{11} c'_1,$ $c_2 = W_{22} c'_2$, and are to be determined from the initial conditions at $n=0$:
+where $c_1 = W_{11} c'_1$ and $c_2 = W_{22} c'_2$ are to be determined from the initial conditions at $n=0$:
 \begin{equation*}
 	r_0 = a_2 + \frac{\beta\hat{\Phi}_0}{V},
 	\quad
@@ -581,11 +608,8 @@ where
 	D = 1 - R_1 R = \frac{E_1 - E_2}{R_{11} - E_2}.
 \end{equation*}
 
-Numerical values of coefficients we have defined so far are presented in Table~\ref{tab:num_coef}.
-
 \begin{table}[h]
-	\caption{Numerical values for universal coefficients calculated at $x^* = 0$. These are independedn of either the interaction potential or the potential averaging details during the layer-by-layer integration.}
-	\begin{center}
+	\noindent\caption{Numerical values for universal coefficients calculated at $x^* = 0$. These are independent of either the interaction potential or the potential averaging details during the layer-by-layer integration.}\vskip3mm\tabcolsep4.5pt
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
 			$s^*$ & $R_{11}$ \quad & $R_{22}$ & $R_{12}^{(0)}$  & $R_{21}^{(0)}$\\
@@ -598,34 +622,39 @@ Numerical values of coefficients we have defined so far are presented in Table~\
 			8.2552 & 0.3763  & 1.0860 & -0.5307 & 0.1620 \\
 			\hline
 		\end{tabular}
-	\end{center}
 	\label{tab:num_coef}
 \end{table}
+
+Numerical values of coefficients we have defined so far are presented in Table~\ref{tab:num_coef}.
 
 The fixed point solution should obey the recurrence relations in the critical point. Since $E_1 > 1$, it follows that the following condition must be true
 \begin{equation*}
 	c_1(T_c) = 0.
 \end{equation*}
 In explicit form, $c_1$ is written as
-\begin{equation*}
-	c_1 = 
-	\left(
-		a_2 - (1 - \bar{r} - R^{(0)}\sqrt{\bar{u}})\frac{\beta \abs{\hat{\Phi}_0}}{V} + \frac{a_4 R^{(0)}}{\sqrt{\bar{u}}} \left(\frac{\beta \abs{\hat{\Phi}_0}}{V}\right)^{-1}
-	\right) D^{-1}
-\end{equation*}
+\begin{eqnarray*}
+	c_1 & = & 
+	\left[
+		a_2 - (1 - \bar{r} - R^{(0)}\sqrt{\bar{u}})\frac{\beta \abs{\hat{\Phi}_0}}{V} 
+		\right.
+		\\
+		&& + \left.\frac{a_4 R^{(0)}}{\sqrt{\bar{u}}} \left(\frac{\beta \abs{\hat{\Phi}_0}}{V}\right)^{-1}
+	\right] D^{-1}
+\end{eqnarray*}
 and one arrives at the equation for the critical temperature
-\begin{equation}
-	\left(1 - \bar{r} - R^{(0)}\sqrt{\bar{u}} \right) \left(\frac{\beta \abs{\hat{\Phi}_0}}{V}\right)^{2} - a_2  \frac{\beta \abs{\hat{\Phi}_0}}{V} + \frac{a_4 R^{(0)}}{\sqrt{\bar{u}}} = 0,
-\end{equation}
-which is a quadratic equation for $\beta \abs{\hat{\Phi}_0}/{V}$. Out of two solutions to this equation, we select the one that gives positive value for the critical temperature:
+\begin{eqnarray}
+	&& \left(1 - \bar{r} - R^{(0)}\sqrt{\bar{u}} \right) \left(\frac{\beta \abs{\hat{\Phi}_0}}{V}\right)^{2}
+	\nonumber
+	\\
+	& & - a_2  \frac{\beta \abs{\hat{\Phi}_0}}{V} + \frac{a_4 R^{(0)}}{\sqrt{\bar{u}}} = 0,
+\end{eqnarray}
+which is a quadratic equation for $\beta \abs{\hat{\Phi}_0}/{V}$. Out of two solutions to this equation, we select the one that gives positive value for the critical temperature $T^*_c\equiv k_{\rm B} T_c/\varepsilon$:
 \begin{equation}
 	\label{eq:T_c}
-	T^*_c \equiv \frac{k_{\rm B} T_c}{\varepsilon} = \frac{\abs{\hat{\Phi}_0}}{\varepsilon V}
-	\left(
+	T^*_c = \frac{\abs{\hat{\Phi}_0}}{\varepsilon V}
 		\frac
-		{a_2 + \sqrt{a_2^2 - 4 a_4 R^{(0)}\bar{u}^{-1/2} (1 - \bar{r} - R^{(0)}\bar{u}^{1/2}) } }
-		{2(1 - \bar{r} - R^{(0)}\bar{u}^{1/2})}
-	\right)^{-1}.
+		{2(1 - \bar{r} - R^{(0)}\sqrt{\bar{u}})}
+		{a_2 + \sqrt{a_2^2 - \frac{4 a_4 R^{(0)}}{\sqrt{\bar{u}}} (1 - \bar{r} - R^{(0)}\sqrt{\bar{u}}) } }.
 \end{equation}
 
 We have obtained an explicit expression for the critical temperature. It is expressed in terms of the Fourier transform of the long-range part of interaction potential at the long-wave limit, i.e. at $\abs{\vb k} = 0,$ of coefficients $a_2$ and $a_4$, which are calculated only based on the reference system, and on the details of averaging the potentials along the layer-by-layer integration. 
@@ -633,10 +662,11 @@ We have obtained an explicit expression for the critical temperature. It is expr
 Note also that the value of the critical temperature depends on the density of the RS. One possible approach to find the critical value of $\rho_c$ is from the condition that the average number of particles of the reference system is equal to that of the whole system $\langle N \rangle_{RS} = \langle N \rangle$, see~\cite{RomaJPS2024} for details. This condition is essentially a mean field approximation for the critical density~\cite{CaillolPatsahan2005,CaillolPatsahan2006}, but since the dependence of $T^*_c$ on $\rho$ is smooth, see Figure~\ref{fig:t_c_vs_rho}, we will use the critical value of $\rho_c^*=0.24912$ found from this condition in~\cite{YukhJSP1995} (expressed there via critical value of the packing fraction $\eta_c = \frac{\pi}{6}\rho^*_c = 0.13044$).
 
 \begin{figure}[htbp]
-	\captionsetup{width=0.6\textwidth}
-	\centering
-	\includegraphics[width=0.5\textwidth,angle=0]{critical_temp_vs_rho}
-	\caption{Critical temperature from Eq.~\eqref{eq:T_c} versus reduced density $\rho^*$. As an example, the square-well potential is used with different values of parameter $\lambda$ (for details, see Section~\ref{sec:results}). The vertical line corresponds to the critical density $\rho^*_c=0.24912$ from~\cite{YukhJSP1995}. Intersection of this line with a line $T_c^* = T_c^*(\rho^*)$ defines the critical temperature for particular potential.}
+	%\captionsetup{width=0.45\textwidth}
+	%\centering
+	%\includegraphics[width=0.45\textwidth,angle=0]{critical_temp_vs_rho}
+	\includegraphics[width=\column]{critical_temp_vs_rho}
+	\caption{Critical temperature from Eq.~\eqref{eq:T_c} versus reduced density $\rho^*$. As an example, the square-well potential is used with different values of parameter $\lambda$ (for details, see Section~\ref{sec:results}). The vertical line corresponds to the critical density $\rho^*_c=0.249$ from~\cite{YukhJSP1995}. Intersection of this line with a line $T_c^* = T_c^*(\rho^*)$ determines the critical temperature for particular potential.}
 	\label{fig:t_c_vs_rho}
 \end{figure}
 

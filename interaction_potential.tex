@@ -44,19 +44,19 @@ It is additionally assumed that the attractive part of the interaction potential
 	\Phi(r) = \frac{1}{V} \sum_{\vb k} \hat{\Phi}_{\vb k} {\rm e}^{i\vb k \vb r} = \frac{1}{(2\pi)^3} \int \hat{\Phi}_{\vb k} {\rm e}^{i\vb k \vb r} {\rm d} {\vb k},
 \end{equation*}
 and
-\begin{equation}
+\begin{equation*}
 	\label{def:fourier}
 	\hat{\Phi}_{\vb k} = \int \Phi(r) {\rm e}^{-i\vb k \vb r} {\rm d} {\vb r}.
-\end{equation}
+\end{equation*}
 Converting to spherical coordinates, and integrating over the angle variables, one arrives at
 \begin{equation}
 	\label{def:fourier_spherical}
 	\hat{\Phi}(k) = \frac{4\pi}{k} \int_{0}^{\infty} r \Phi(r) \sin(k r) {\rm d} r.
 \end{equation}
 
-Several model potentials are be taken for $\phi$ in the next Section~\ref{sec:results}. 
+Several model potentials will be considered for $\phi$ in the next Section~\ref{sec:results}. 
 
-To proceed with analytic calculations of the fixed point coordinates, and to get some numerical results, let us apply the so-called parabolic approximation for the Fourier component of the interaction potential
+To proceed with analytic calculations of the critical temperature and in order ot get some numerical results, let us apply the so-called parabolic approximation for the Fourier component of the interaction potential
 \begin{equation*}
 	\hat{\Phi}_{\vb k} = \hat{\Phi}_0 (1 - 2b^2k^2),
 \end{equation*}
@@ -65,9 +65,9 @@ where
 	2b^2 = -\frac{1}{2\hat{\Phi}_0} \frac{\partial^2 \hat{\Phi}_k}{\partial k^2} \bigg|_{k=0}.
 \end{equation*}
 Then let us select the cut-off parameter as
-$$
+\begin{equation*}
 B_0 = \frac{1}{\sqrt{2} b}.
-$$
+\end{equation*}
 For $\hat{\Phi}_{B_{n+1}, B_n}$, in the case of arithmetic average, it follows
 \begin{equation*}
 	\hat{\Phi}_{B_{n+1}, B_n} = \hat{\Phi}_0 \left(1 - s^{-2n} \frac{1 + s^{-2}}{2}\right)
@@ -79,12 +79,14 @@ and for $q$ one obtains
 with $\bar{q} = 0.5389$.
 
 In the case of spherical averaging
-\begin{equation*}
+\begin{eqnarray}
 	\label{def:spheric_average}
-	\hat{\Phi}_{B_{n+1}, B_n} = \frac{\int_{B_{n+1}}^{B_n} \hat{\Phi}_{\vb k} {\rm d} {\vb k}}
+	\hat{\Phi}_{B_{n+1}, B_n} & = &  \frac{\int_{B_{n+1}}^{B_n} \hat{\Phi}_{\vb k} {\rm d} {\vb k}}
 	{\int_{B_{n+1}}^{B_n} {\rm d} {\vb k}} 
-	= \frac{\hat{\Phi}_0 \int_{B_{n+1}}^{B_n} (1 - 2b^2k^2) k^2 {\rm d} k}{\int_{B_{n+1}}^{B_n} k^2 {\rm d} k}
-\end{equation*}
+	\nonumber
+	\\
+	& = & \frac{\hat{\Phi}_0 \int_{B_{n+1}}^{B_n} (1 - 2b^2k^2) k^2 {\rm d} k}{\int_{B_{n+1}}^{B_n} k^2 {\rm d} k}
+\end{eqnarray}
 one gets
 \begin{equation*}
 	\hat{\Phi}_{B_{n+1}, B_n} = \hat{\Phi}_0 \left(1 - s^{-2n} \frac{3(1 - s^{-5})}{5(1 - s^{-3})}\right)
@@ -96,17 +98,17 @@ and for $q$
 with $\bar{q} = 0.6123$ at $s = s^*$.
 
 For convenience, we gathered the numerical values of coefficients depending on the potential averaging details in Table~\ref{tab:num_coef_vs_average}.
+\\
+
 \begin{table}[h]
-	\caption{Numerical values for non-universal coefficients calculated at $x^* = 0$. These are dependent on the details of potential averaging during the layer-by-layer integration.}
-	\begin{center}
-		\begin{tabular}{|c|c|c|c|}
-			\hline
-			Averaging & $\bar{q}$ \quad & $\bar{r}$ & $\bar{u}$ \\
-			\hline
-			Arithmetic & 0.5389  & 0.5389 & 0.6890 \\
-			Spherical & 0.6123 & 0.6123 & 0.8894 \\
-			\hline
-		\end{tabular}
-	\end{center}
+	\noindent\caption{Numerical values for non-universal coefficients calculated at $x^* = 0$. These are dependent on the details of potential averaging during the layer-by-layer integration.}\vskip3mm\tabcolsep4.5pt
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Averaging & $\bar{q}$ \quad & $\bar{r}$ & $\bar{u}$ \\
+		\hline
+		Arithmetic & 0.5389  & 0.5389 & 0.6890 \\
+		Spherical & 0.6123 & 0.6123 & 0.8894 \\
+		\hline
+	\end{tabular}
 	\label{tab:num_coef_vs_average}
 \end{table}
