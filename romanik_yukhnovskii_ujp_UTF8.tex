@@ -1,0 +1,66 @@
+\documentclass[fleqn,twoside,twocolumn,nofootinbib,showkeys]{revtex4} % Specifies the document class %,unsortedaddress
+\usepackage[sec,doi]{ujp_UTF8} % \usepackage[cyr]{ujp_UTF8} for cyrillic
+
+\usepackage{physics}
+\usepackage{caption}
+
+\usepackage{hyperref} % for hyperlinks in references
+\usepackage[nameinlink]{cleveref}
+
+\begin{document}
+\title[Critical temperature determination for fluids]%колонтитул
+{Critical temperature determination for fluids. An analytical approach based on collective variables method}%
+\author{R.V.~Romanik}%1 автор
+\affiliation{Institute for Condensed Matter Physics,\\ Nat. Acad. of Sci. of Ukraine}%институт
+\address{1, Svientsitskii Str., Lviv 79011, Ukraine}%адрес
+\email{romanik@icmp.lviv.ua}%e-mail
+\author{\hbox{I.R.~Yukhnovkii}}
+\affiliation{Institute for Condensed Matter Physics,\\ Nat. Acad. of Sci. of Ukraine}%
+\address{1, Svientsitskii Str., Lviv 79011, Ukraine}%
+
+\udk{539} \pacs{71.20.Nr, 72.20.Pa} \razd{\secvii}
+
+\autorcol{R.V.~Romanik, I.R.~Yukhnovskii}
+
+\cit{Romanik~R.V., Yukhnovskii~I.R. Critical temperature determination for fluids. An analytical approach based on collective variables method}{\selectlanguage{ukrainian} Романік~Р.В., Юхновський~І.Р. Визначення критичної температури флюїдів. Аналітичний підхід на основі методу колективних змінних}
+
+\setcounter{page}{53}
+%\setcounter{jnumber}{5}
+
+\begin{abstract}
+In this paper, we integrate the grand partition function functional obtained in our previous work~[I.R.~Yukhnovskii, R.V.~Romanik, J. Phys. Stud., {\bf 28}, 2, (2024)], applying the method of leyer-by-leyer integration over collective variables.
+\end{abstract}
+
+\keywords{Simple fluids, Collective variables, Critical temperature.}
+
+\maketitle
+
+\input{./intro}
+
+\input{./grand_partition_function}
+
+\input{./interaction_potential}
+
+\input{./results}
+
+\section{Conclusions}
+
+Thus, 
+
+\appendix
+
+\renewcommand{\theequation}{A.\arabic{equation}}
+\setcounter{equation}{0}
+
+\input{./appendix-a}
+
+\input{./appendix-b}
+
+\vskip3mm \textit{}
+
+\bibliography{fluids_cv,fluids_general,icmp,books_cv,romanik,books_romanik_bibliography}
+
+\vspace*{-5mm} \rezume{%
+Р.В. Романік, І.Р. Юхновський} {Визначення критичної температури флюїдів. Аналітичний підхід на основі методу колективних змінних} {Проведено поетапне інтегрування функціоналу великої статистичної суми системи багатьох взаємодіючих частинок}{\textit{К\,л\,ю\,ч\,о\,в\,і\,
+с\,л\,о\,в\,а:} прості плини, колективні змінні, критична температура.}
+\end{document}
