@@ -41,7 +41,7 @@ where $r_{\rm m}$ is the coordinate of the potential minimum. We use the WCA reg
 
 It is additionally assumed that the attractive part of the interaction potential possesses a well behaved Fourier component $\hat{\Phi}_{\vb k}$ such that:
 \begin{equation*}
-	\Phi(r) = \frac{1}{V} \sum_{\vb k} \hat{\Phi}_{\vb k} {\rm e}^{i\vb k \vb r} = \frac{1}{(2\pi)^3} \int {\rm d} {\vb k} \hat{\Phi}_{\vb k} {\rm e}^{i\vb k \vb r},
+	\Phi(r) = \frac{1}{V} \sum_{\vb k} \hat{\Phi}_{\vb k} {\rm e}^{i\vb k \vb r} = \frac{1}{(2\pi)^3} \int \hat{\Phi}_{\vb k} {\rm e}^{i\vb k \vb r} {\rm d} {\vb k},
 \end{equation*}
 and
 \begin{equation}
@@ -80,6 +80,7 @@ with $\bar{q} = 0.5389$.
 
 In the case of spherical averaging
 \begin{equation*}
+	\label{def:spheric_average}
 	\hat{\Phi}_{B_{n+1}, B_n} = \frac{\int_{B_{n+1}}^{B_n} \hat{\Phi}_{\vb k} {\rm d} {\vb k}}
 	{\int_{B_{n+1}}^{B_n} {\rm d} {\vb k}} 
 	= \frac{\hat{\Phi}_0 \int_{B_{n+1}}^{B_n} (1 - 2b^2k^2) k^2 {\rm d} k}{\int_{B_{n+1}}^{B_n} k^2 {\rm d} k}
@@ -93,3 +94,19 @@ and for $q$
 	q = -\frac{\beta \hat{\Phi}_0}{V} \bar{q}, \quad \bar{q} = \frac{3(1 - s^{-5})}{5(1 - s^{-3})},
 \end{equation*}
 with $\bar{q} = 0.6123$ at $s = s^*$.
+
+For convenience, we gathered the numerical values of coefficients depending on the potential averaging details in Table~\ref{tab:num_coef_vs_average}.
+\begin{table}[h]
+	\caption{Numerical values for non-universal coefficients calculated at $x^* = 0$. These are dependent on the details of potential averaging during the layer-by-layer integration.}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Averaging & $\bar{q}$ \quad & $\bar{r}$ & $\bar{u}$ \\
+			\hline
+			Arithmetic & 0.5389  & 0.5389 & 0.6890 \\
+			Spherical & 0.6123 & 0.6123 & 0.8894 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:num_coef_vs_average}
+\end{table}

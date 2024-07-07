@@ -469,7 +469,7 @@ Let us use the linear approximation for the recurrence relations~\eqref{RR_final
 			u_{n+1} - u^*
 		\end{array}
 	\right)
-	= R
+	= \cal{R}
 	\left(
 		\begin{array}{c}
 			r_{n} - r^* \\
@@ -477,7 +477,7 @@ Let us use the linear approximation for the recurrence relations~\eqref{RR_final
 		\end{array}
 	\right)
 \end{equation}
-The elements of the linearized renormalization group transformation matrix $R$ are calculated by the formulas
+The elements of the linearized renormalization group transformation matrix $\cal{R}$ are calculated by the formulas
 \begin{equation*}
 	R_{11} = \left(\frac{\partial r_{n+1}}{\partial r_n}\right)^* = s^2 \left[N(x^*) + x^* \left(\frac{\partial N(x)}{\partial x} \right)_{x=x^*} \right],
 \end{equation*}
@@ -504,14 +504,14 @@ Note that the following relations were used for calculating the matrix elements:
 	\left(\frac{\partial x_n}{\partial u_n}\right)^* = - \frac{x^*}{2u^*}.
 \end{equation*}
 
-The eigenvalues for the matrix $R$ are
+The eigenvalues for the matrix $\cal{R}$ are
 \begin{equation*}
 	E_1 = \frac{1}{2} \left\{ (R_{11} + R_{22}) + \left[(R_{11} - R_{22})^2 + 4 R_{12}^{(0)}R_{21}^{(0)}\right]^{1/2}\right\},
 \end{equation*}
 \begin{equation*}
-	E_2 = \frac{1}{2} \left\{ (R_{11} + R_{22}) - \left[(R_{11} - R_{22})^2 + 4 R_{12}^{(0)}R_{21}^{(0)}\right]^{1/2}\right\},
+	E_2 = \frac{1}{2} \left\{ (R_{11} + R_{22}) - \left[(R_{11} - R_{22})^2 + 4 R_{12}^{(0)}R_{21}^{(0)}\right]^{1/2}\right\}.
 \end{equation*}
-and the eigenvectors are
+The eigenvectors for the matrix $\cal{R}$ are
 \begin{equation*}
 	W_1 = W_{11} \left(
 	\begin{array}{ll}
@@ -529,11 +529,24 @@ and the eigenvectors are
 	\end{array}
 	\right)
 \end{equation*}
-where 
-\begin{equation*}
-	R = \frac{R_{12}}{E_2 - R_{11}}, \quad R_1 = \frac{E_1 - R_{11}}{R_{12}},
-\end{equation*}
-and constants $W_{11}$ and $W_{22}$ are yet to be determined.
+where constants $W_{11}$ and $W_{22}$ are yet to be determined, and quantities $R$ and $R_1$ are defined as
+\begin{eqnarray*}
+	R & = & \frac{R_{12}}{E_2 - R_{11}}, 
+	\\
+	R_1 & = & \frac{E_1 - R_{11}}{R_{12}},
+\end{eqnarray*}
+or more conveniently
+\begin{eqnarray*}
+	R & = & (u^*)^{1/2}R^{(0)}, 
+	\\
+	R_1 & = & (u^*)^{-1/2}R_1^{(0)},
+\end{eqnarray*}
+with
+\begin{eqnarray*}
+	R^{(0)} & = & \frac{R_{12}^{(0)}}{E_2 - R_{11}}
+	\\
+	R_1^{(0)} & = & \frac{E_1 - R_{11}}{R_{12}^{(0)}}.
+\end{eqnarray*}
 Thus the solution to the linear recurrence relations~\eqref{eq:linear_rr} can be written as
 \begin{equation}
 	\left(
@@ -568,6 +581,27 @@ where
 	D = 1 - R_1 R = \frac{E_1 - E_2}{R_{11} - E_2}.
 \end{equation*}
 
+Numerical values of coefficients we have defined so far are presented in Table~\ref{tab:num_coef}.
+
+\begin{table}[h]
+	\caption{Numerical values for universal coefficients calculated at $x^* = 0$. These are independedn of either the interaction potential or the potential averaging details during the layer-by-layer integration.}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			$s^*$ & $R_{11}$ \quad & $R_{22}$ & $R_{12}^{(0)}$  & $R_{21}^{(0)}$\\
+			\hline
+			3.5862 & 7.6315  & 1.0000 & 3.8502 & 1.1753 \\
+			\hline
+			\hline
+			$E_1$ & $E_2$ \quad & $D$ & $R^{(0)}$  & $R_1^{(0)}$\\
+			\hline
+			8.2552 & 0.3763  & 1.0860 & -0.5307 & 0.1620 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:num_coef}
+\end{table}
+
 The fixed point solution should obey the recurrence relations in the critical point. Since $E_1 > 1$, it follows that the following condition must be true
 \begin{equation*}
 	c_1(T_c) = 0.
@@ -594,8 +628,16 @@ which is a quadratic equation for $\beta \abs{\hat{\Phi}_0}/{V}$. Out of two sol
 	\right)^{-1}.
 \end{equation}
 
-We have obtained an explicit expression for the critical temperature. It is expressed in terms of the Fourier transform of the long-range part of interaction potential at the long-wave limit, i.e. at $\vb k = 0,$ of coefficients $a_2$ and $a_4$, which are calculated only based on the reference system, and on the details of averaging the potentials along the layer-by-layer integration (which is equivalent to the renormalization group transformation due to Wilson and Kadanoff [REFERENCE NEEDED]). 
+We have obtained an explicit expression for the critical temperature. It is expressed in terms of the Fourier transform of the long-range part of interaction potential at the long-wave limit, i.e. at $\abs{\vb k} = 0,$ of coefficients $a_2$ and $a_4$, which are calculated only based on the reference system, and on the details of averaging the potentials along the layer-by-layer integration. 
 
-Note also that the value of the critical temperature depends on the density, or rather packing fraction $\eta$ of the reference system. One possible approach to find the critical value of $\eta_c$ is from the condition that the average number of particles of the reference system is equal to that of the whole system $\langle N \rangle_{RS} = \langle N \rangle$, see~\cite{RomaJPS2024} for details. This condition is essentially a mean field approximation for the critical density~\cite{CaillolPatsahan2005,CaillolPatsahan2006}, but since the dependence of $T^*_c$ on $\eta$ is smooth, see Figure~2, we will use the critical value of $\eta_c = 0.13044$ found from this condition in~\cite{YukhJSP1995}.
+Note also that the value of the critical temperature depends on the density of the RS. One possible approach to find the critical value of $\rho_c$ is from the condition that the average number of particles of the reference system is equal to that of the whole system $\langle N \rangle_{RS} = \langle N \rangle$, see~\cite{RomaJPS2024} for details. This condition is essentially a mean field approximation for the critical density~\cite{CaillolPatsahan2005,CaillolPatsahan2006}, but since the dependence of $T^*_c$ on $\rho$ is smooth, see Figure~\ref{fig:t_c_vs_rho}, we will use the critical value of $\rho_c^*=0.24912$ found from this condition in~\cite{YukhJSP1995} (expressed there via critical value of the packing fraction $\eta_c = \frac{\pi}{6}\rho^*_c = 0.13044$).
 
-In what follows we're going to calculate numerical values for $T^*_c$ following from Eq~\eqref{eq:T_c} for a few model system of type ``hard spheres with long-range interaction'', and compare the results obtained from our analytical approach with known results from computer simulations.
+\begin{figure}[htbp]
+	\captionsetup{width=0.6\textwidth}
+	\centering
+	\includegraphics[width=0.5\textwidth,angle=0]{critical_temp_vs_rho}
+	\caption{Critical temperature from Eq.~\eqref{eq:T_c} versus reduced density $\rho^*$. As an example, the square-well potential is used with different values of parameter $\lambda$ (for details, see Section~\ref{sec:results}). The vertical line corresponds to the critical density $\rho^*_c=0.24912$ from~\cite{YukhJSP1995}. Intersection of this line with a line $T_c^* = T_c^*(\rho^*)$ defines the critical temperature for particular potential.}
+	\label{fig:t_c_vs_rho}
+\end{figure}
+
+In Section~\ref{sec:results} we calculate numerical values for $T^*_c$ following from Eq~\eqref{eq:T_c} for a few model systems of type ``hard spheres with long-range attractive tail'', and compare the results obtained from our analytical approach with known results from other works. For the hard sphere system, we employ the Carnahan-Starling approximation~\cite{CarnahanStarling1969} to calculate quantities $a_2$ and $a_4$, which enter the equation~\eqref{eq:T_c} and are explicitly given in Appendix~\ref{sec:app-a}. But first let us discuss the details of interaction potentials and applied approximations for them.
