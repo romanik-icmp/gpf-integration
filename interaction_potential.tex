@@ -4,7 +4,7 @@ The potential energy of the inter-particle interaction is written in the form
 	U_N(\vb r^N) &=& \frac12 \underset{i\neq j}{\sum_{i=1}^N \sum_{j=1}^N} \Psi(r_{ij}) 
 	+ \frac12 \underset{i\neq j}{\sum_{i=1}^N \sum_{j=1}^N} \Phi(r_{ij}).	
 \end{eqnarray*}
-Here $\Psi(r)$ corresponds for the short-range repulsive interaction, and $\Phi(r)$ for the long-range attractive interaction. In this work the hard-sphere (HS) potential is taken for $\Psi(r)$
+Here $\Psi(r)$ corresponds for the short-range repulsive interaction, and $\Phi(r)$ for the long-range attractive interaction. In this work the HC potential is taken for $\Psi(r)$
 \begin{equation*}
 	\Psi(r) = 
 	\left\{
@@ -14,7 +14,7 @@ Here $\Psi(r)$ corresponds for the short-range repulsive interaction, and $\Phi(
 	\end{array}
 	\right.
 \end{equation*}
-where $\sigma$ denotes the hard-sphere diameter. The long-range term $\Phi(r)$ is chosen so that it possesses a potential well at $r \geq \sigma$
+where $\sigma$ denotes the HC diameter. The long-range term $\Phi(r)$ is chosen so that it possesses a potential well at $r \geq \sigma$
 \begin{equation}
 	\label{def:long-range-potential}
 	\Phi(r) = \left\{
@@ -26,7 +26,7 @@ where $\sigma$ denotes the hard-sphere diameter. The long-range term $\Phi(r)$ i
 	\right.
 \end{equation}
 where $\phi(r)$ denotes an attractive part of the interaction and is chosen in the form a few widely used potentials later.
-Separation in~\eqref{def:long-range-potential} is not the only way to select the form for $\Phi(r)$ inside the hard-core region. One popular approach is the Weeks-Chandler-Andersen (WCA) regularization originated from~\cite{WCA1971}, according to which one has
+Separation in~\eqref{def:long-range-potential} is not the only way to select the form for $\Phi(r)$ inside the HC region. One popular approach is the Weeks-Chandler-Andersen (WCA) regularization originated from~\cite{WCA1971}, according to which one has
 \begin{equation}
 	\label{def:long-range-potential_wca}
 	\Phi(r) = \left\{

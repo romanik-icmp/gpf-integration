@@ -20,7 +20,7 @@
 	\label{tab:morse_temp_cr}
 \end{table}
 
-In this section we present numerical results for critical temperature calculated by Eq.~\eqref{eq:T_c} for a few van der Waals hard-core models~\cite{KreiciNezbeda2012}. We consider the following potentials as the long-range attractive part of the whole interaction: the Morse potential, the square-well potential, the Yukawa potential, and the Lennard-Jones 6-12 potential. For potential averaging we apply the spherical one~\eqref{def:spheric_average}.
+In this section we present numerical results for critical temperature calculated by Eq.~\eqref{eq:T_c} for several HC van der Waals models~\cite{KreiciNezbeda2012}. We consider the following potentials as the long-range attractive part of the whole interaction: the Morse potential, the square-well potential, the Yukawa potential, and the Lennard-Jones 6-12 potential. For potential averaging we apply the spherical one~\eqref{def:spheric_average}.
 %The expressions for all these potentials as well as for the corresponding Fourier transforms $\hat{\Phi}_{\vb k}$ are presented in Appendix~\ref{app:potentials}.
 
 We start with the Morse potential given by
@@ -56,11 +56,11 @@ and the Fourier transform $\hat{\Phi}_{\vb k}$ is
 	- \frac{\sigma/\alpha}{4 + k^2\alpha^2} \left(2\frac{\sigma}{\alpha} + \frac{4 - k^2\alpha^2}{4 + k^2\alpha^2}\right) \frac{\sin(k\sigma)}{k\sigma}
 	\right].
 \end{eqnarray*}
-The results for critical temperature for the hard-core Morse model are presented in Table~\ref{tab:morse_temp_cr}. It is seen from the results that the critical temperature decreases as the range of interaction decreases. This trend is a common fact~\cite{KreiciNezbeda2012,MendoubWaxJakse2010}.
-We have not found other works that study the hard-core Morse fluid, but we include these results here since it has been the model often considered in the collective variables approach with HS as a reference system~\cite{Yukh1990,YukhJSP1995,PatsJSP1995}, as well as without employing additional RS~\cite{PylMpkDobUPJ2023b,PylJML2023}.
+The results for critical temperature for the HC Morse model are presented in Table~\ref{tab:morse_temp_cr}. It is seen from the results that the critical temperature decreases as the range of interaction decreases. This trend is a common fact~\cite{KreiciNezbeda2012,MendoubWaxJakse2010}.
+We have not found other works that study the HC Morse fluid, but we include these results here since it has been the model often considered in the CV approach with HC as a RS~\cite{Yukh1990,YukhJSP1995,PatsJSP1995}, as well as without employing any RS~\cite{PylMpkDobUPJ2023b,PylJML2023}.
 
 \begin{table}[h]
-	\noindent\caption{Critical temperature of the hard-core square-well fluid for different values of $\lambda$.}\vskip3mm\tabcolsep4.5pt
+	\noindent\caption{Critical temperature of the HC square-well fluid for different values of $\lambda$.}\vskip3mm\tabcolsep4.5pt
 	\begin{tabular}{|c|c|c|}
 		\hline
 		\multicolumn{3}{|c|}{Square-well}\\
@@ -98,7 +98,7 @@ Its Fourier transform does not exist, and the Fourier transform $\hat{\Phi}_{\vb
 	&& - \sin(\sigma k) + \sigma k \cos(\sigma k)\bigl].
 \end{eqnarray*}
 We however will apply the WCA regularization for the square-well potential
-in the hard-core region
+in the HC region
 \begin{equation*}
 	\label{def:sw-wca}
 	\Phi(r) = \left\{
@@ -114,11 +114,11 @@ since for such choice the agreement of critical temperature values with known re
 	\hat{\Phi}_k & = & -\frac{4\pi\varepsilon\sigma^3}{(\sigma k)^3} 
 	\left[\sin(\lambda \sigma k) - \lambda \sigma k \cos(\lambda \sigma k)\right].
 \end{eqnarray*}
-The results for such model are presented in Table~\ref{tab:sw_temp_cr}. The results are compared with the ones reported in~\cite{KreiciNezbeda2012} for their perturbed virial expansion of the second order (PVE2). The work~\cite{KreiciNezbeda2012} contains more results for the hard-core square-well model obtained by different methods as well as references to computer simulation results.  
+The results for such model are presented in Table~\ref{tab:sw_temp_cr}. The results are compared with the ones reported in~\cite{KreiciNezbeda2012} for their perturbed virial expansion of the second order (PVE2). The work~\cite{KreiciNezbeda2012} contains more results for the HC square-well model obtained by different methods as well as references to computer simulation results.  
 As is seen from the results, the critical temperature increases as the range of interaction increases. Overall, the agreement of the critical temperature for the square-well potential obtained within our approach agrees very well with the known results for this model.
 
 \begin{table}[h]
-	\noindent\caption{Critical temperature of the hard-core Yukawa fluid for different values of $\lambda$.}\vskip3mm\tabcolsep4.5pt
+	\noindent\caption{Critical temperature of the HC Yukawa fluid for different values of $\lambda$.}\vskip3mm\tabcolsep4.5pt
 		\begin{tabular}{|c|c|c|c|}
 			%\begin{tabular}{cccccccccc}
 			\hline
@@ -176,10 +176,10 @@ and thus
 	\left[\cos(\sigma k) + \lambda \frac{\sin(\sigma k)}{\sigma k} \right]
 	\right\}.
 \end{eqnarray*}
-The results for the critical temperatures of the hard-core attractive Yukawa model~\eqref{def:yukawa} are presented in Table~\ref{tab:yukawa_temp_cr}. They are compared with the ones reported in~\cite{MendoubWaxJakse2010} (wherein other results for the critical temperature of the hard-core Yukawa model can also be found). As is seen from the Table~\ref{tab:yukawa_temp_cr}, the critical temperature decreases as the range of interaction decreases. Our results are reported for two cases, with and without applying the WCA regularization. It is seen that the critical temperature calculated without applying WCA regularization tends to be lower compared to the known results, while the one with applying it tends to be higher.
+The results for the critical temperatures of the HC attractive Yukawa model~\eqref{def:yukawa} are presented in Table~\ref{tab:yukawa_temp_cr}. They are compared with the ones reported in~\cite{MendoubWaxJakse2010} (wherein other results for the critical temperature of the HC Yukawa model can also be found). As is seen from the Table~\ref{tab:yukawa_temp_cr}, the critical temperature decreases as the range of interaction decreases. Our results are reported for two cases, with and without applying the WCA regularization. It is seen that the critical temperature calculated without applying WCA regularization tends to be lower compared to the known results, while the one with applying it tends to be higher.
 
 \begin{table}[h]
-	\noindent\caption{Critical temperature of the hard-core Lennard-Jones fluid}\vskip3mm\tabcolsep4.5pt
+	\noindent\caption{Critical temperature of the HC Lennard-Jones fluid}\vskip3mm\tabcolsep4.5pt
 	\begin{tabular}{|c|c|}
 		\hline
 		\multicolumn{2}{|c|}{HC Lennard-Jones}\\
@@ -196,7 +196,7 @@ The final potential we consider in this paper is the Lennard-Jones one
 \begin{equation*}
 	\phi^{LJ}(r) = 4\varepsilon \left[(\sigma/r)^{12} - (\sigma/r)^6\right].
 \end{equation*}
-The hard-core Lennard-Jones fluid is defined in literature~\cite{SowersStanley1991,DiezLargoSolana2010} as
+The HC Lennard-Jones fluid is defined in literature~\cite{SowersStanley1991,DiezLargoSolana2010} as
 \begin{equation*}
 	\phi^{LJ}(r) = \left\{
 	\begin{array}{llll}
